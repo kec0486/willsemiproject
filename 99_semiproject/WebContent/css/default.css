@@ -1,0 +1,167 @@
+/* content css */
+.content {
+	border: 1px solid black;
+}
+.main {
+	height:500px;
+	margin-top: 300px;
+	margin-left: 450px;
+}
+.login {
+	float: left;
+	background-color: rgba(33, 33, 31, 0.178);
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color : white;
+	float: left;
+	text-align: center;
+	box-shadow: 13px 20px 50px 0px rgb(0 0 0 / 30%);
+	
+}
+.notice {
+	background-color: rgba(33, 33, 31, 0.178);
+	border: 1px solid black;
+	margin-left: 100px;
+	width: 400px;
+    height: 200px;
+	border-radius: 20px;
+	background-color : white;
+	float: left;
+	text-align: center;
+	box-shadow: 13px 20px 50px 0px rgb(0 0 0 / 30%);
+}
+aside {
+	float: left;
+	width: 20%;
+}
+section {
+	float: left;
+	width: 80%;
+}
+.container {
+	height: 650px;
+}
+.content {
+	height: 750px;
+}
+/* body {
+	margin: 0;
+	padding: 0;
+	font-family:serif;
+	font-size: 12pt;
+}
+.main-index {
+	margin:0;
+	padding: 0;
+	background-image: url("../img/벚꽃.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: block;
+}
+.main-logo {
+	height: 300px;
+}
+.main-login {
+	height: 600px;
+}
+.login-title {
+	text-align: left;
+    font-size: 30px;
+    color: #69b030;
+    font-family: 'noto sans kr';
+}
+.manu-bar {
+	float: left;
+	width: 200px;
+	list-style: none;
+}
+.login {
+	height:500px;
+	background-color: rgba(33, 33, 31, 0.178);
+	padding-top: 150px;
+	padding-left: 300px;
+}
+.login-main {
+	width:300px;
+	height:300px;
+	border-radius: 20px;
+	background-color : white;
+	float: left;
+	text-align: center;
+	box-shadow: 13px 20px 50px 0px rgb(0 0 0 / 30%);
+	}
+.main-notice {
+	position:relative;
+	width:500px;
+	height:300px;
+	display:inline-block;
+	background-color:white;
+	border-left: 50px;
+	left: 300px;
+}	
+.notice {
+	position: relative;
+	float: left;
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+.tab {
+	display: inline-block;
+}
+.main-table {
+	
+}
+.login-btn {
+	background-color: gray;
+	margin:5px 10px;
+	width: 150px;
+	height: 40px;
+}
+.container {
+	height: 700px;
+}
+.header {
+	background-color: aqua;
+	color: white;
+	height: 50px;
+	}
+.manu-bar {
+	border: 1px solid;
+}
+.login-ok {
+	margin:0; padding:0;
+	display: inline;
+}
+.nav {
+	background-color: green;
+	
+}
+.nav-header {
+	margin: 0px;
+	padding: 5px;
+}
+.logo {
+	float: left;
+}
+.logout {
+	text-align: right;
+}
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap'); */
+
+
+
+
+
+/* footer css */
+.footer  {
+ 	font-size : 30px;
+ 	font-family: 'East Sea Dokdo', cursive;	
+}
+ 
+.footer-main {
+ 	background-color: white;
+ 	text-align : center;
+}

@@ -1,0 +1,32 @@
+package com.mystudy.college.model.command;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.mystudy.college.model.dao.AuthorityDAO;
+import com.mystudy.college.model.vo.StudentVO;
+import com.sun.org.apache.bcel.internal.generic.ATHROW;
+
+public class StLoginCommand implements Command {
+
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		String pwd = request.getParameter("pwd");
+		StudentVO vo = new StudentVO();
+		vo.setSt_id(id);
+		vo.setSt_pwd(pwd);
+		System.out.println(vo);
+//		if (AuthorityDAO.stlogin(vo) == null) {
+//			return "index.jsp";			
+//		}else {
+//			return "main.jsp";
+//		}
+		return "index.jsp";	
+		
+	}
+
+}

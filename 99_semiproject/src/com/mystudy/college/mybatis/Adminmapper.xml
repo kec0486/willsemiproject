@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+	<insert id="stinsert" parameterType="com.mystudy.college.model.vo.StudentVO">
+		INSERT INTO STUDENT VALUES(STUDENT_SEQ.NEXTVAL,
+									#{ st_pwd },
+									#{ st_name },
+									#{ st_ssn },
+									#{ st_level },
+									#{ st_mobile },
+									#{ st_phone },
+									#{ st_email },
+									#{ st_addr },
+									#{ ma_code })
+	</insert>
+	<update id="stupdate" parameterType="com.mystudy.college.model.vo.StudentVO">
+		UPDATE STUDENT SET  st_pwd = #{ st_pwd },
+						    st_name = #{ st_name },
+							st_ssn = #{ st_ssn },
+							st_level = #{ st_level },
+							st_mobile = #{ st_mobile },
+							st_phone = #{ st_phone },
+							st_email = #{ st_email },
+							st_addr = #{ st_addr },
+							ma_code = #{ ma_code }
+				WHERE st_id = #{st_id}
+	</update>
+	<select id="stselectAll" resultType="com.mystudy.college.model.vo.StudentVO">
+		SELECT * FROM STUDENT ORDER BY ST_ID
+	</select>
+	<select id="stselect" resultType="com.mystudy.college.model.vo.StudentVO">
+		SELECT * FROM STUDENT ORDER BY ST_ID WHERE ST_ID = #{st_id}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
