@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeboard">
+
+	<select id="selectAll" resultType="com.mystudy.college.model.vo.NoticeboardVO">
+		SELECT * 
+		FROM NOTICEBOARD
+		ORDER BY N_NUM DESC
+	</select>
+	
+	<select id="select" resultType="com.mystudy.college.model.vo.NoticeboardVO">
+		SELECT * 
+		FROM NOTICEBOARD 
+		WHERE N_NUM = #{n_num}
+	</select>
+<!--
+	<insert id="insert" parameterType="com.mystudy.college.model.vo.NoticeboardVO">
+		INSERT INTO NOTICEBOARD VALUES(NOTICEBOARD_SEQ.NEXTVAL,
+										#{ n_title },
+										#{ n_contents },
+										SYSDATE,
+										#{ n_orgfilename },
+										#{ n_savefilename },
+										#{ c_id },
+										#{ ad_id })
+	</insert>
+	
+	<update id="update" parameterType="com.mystudy.college.model.vo.NoticeboardVO">
+		UPDATE STUDENT SET  N_TITLE = #{ n_title },
+						    N_CONTENTS = #{ n_contents },
+							N_ORGFILENAME = #{ n_orgfilename },
+					 		N_SAVEFILENAME = #{ n_savefilename },
+							C_ID = #{ c_id },
+							AD_ID = #{ ad_id },
+				WHERE N_NUM = #{n_num}
+	</update>
+  -->
+</mapper>
+
+
+
+
+
+
+

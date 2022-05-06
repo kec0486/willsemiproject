@@ -68,6 +68,11 @@
 				<div class="container">
 					<!-- <h1>container</h1> -->
 				</div>
+				
+				
+				
+				
+				
 				<div class="footer-sub">
 					<br> <img src="img/로고.png" alt="학교 로고사진" height=35px>
 					<span class="font">&nbsp; 아이티윌 대학교</span>

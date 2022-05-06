@@ -7,6 +7,7 @@
 <title>아이티윌대학교 포털사이트</title>
 <link href="css/default.css" rel="stylesheet">
 <link href="js/default.js" rel="javascript">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('ul.tabs li').click(function() {

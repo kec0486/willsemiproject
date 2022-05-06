@@ -36,6 +36,7 @@
   <mappers>
     <mapper resource="com/mystudy/college/mybatis/Authoritymapper.xml"/>
     <mapper resource="com/mystudy/college/mybatis/Adminmapper.xml"/>
+    <mapper resource="com/mystudy/college/mybatis/Noticeboardmapper.xml"/>
   </mappers>
   
 </configuration>
