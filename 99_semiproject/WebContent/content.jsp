@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
 	function openCity(cityName) {
 		var i;
@@ -9,73 +10,180 @@
 		}
 		document.getElementById(cityName).style.display = "block";
 	}
+	/* function loginCheck(){
+		var id = $('input[name=username]'); //아이디
+		var pwd = $('input[name=password]'); //비밀번호
+		if(id.val() == ''){
+			alert('아이디를 입력해주세요');
+			id.focus();
+			return false;
+		}else if(pwd.val() == ''){
+			alert('비밀번호를 입력해주세요');
+			pwd.focus();
+			return false;
+		}
+		return true;
+	}
+	function login() {
+		$(function(){
+			
+			if($("#id").trim().val() == ''){
+				alert("학번를 입력해주세요.");
+		        id.focus();
+		        return;
+			}
+			if($("#pwd").trim().val() == ''){
+				alert("비밀번호를 입력해주세요.");
+		        id.focus();
+		        return;
+			}
+		});	
+	} */
 </script>
 <div class="content">
-	<h1>학생창</h1>
-	<!-- login -->
-	<div class="main">
-		<div class="login">
-			<form action="controller?type=stlogin" method="post"><!-- controller?type=login -->
-				<h2 class="login-title">통합로그인</h2>
-				<br> <input type="text" name="id"><br> <input
-					type="password" name="password"><br> <input
-					type="submit" value="로그인" class="login-btn"><br>
-			</form>
-			<span class="login-search"><a href="#">학번/교번 찾기</a></span>
-			<span class="login-reset"><a href="#">비밀번호초기화</a></span>
-		</div>
-		<!-- notice -->
-		<div class="notice">
-			<div class="w3-bar w3-black">
-				<button class="w3-bar-item w3-button" onclick="openCity('potal')">포털공지</button>
-				<button class="w3-bar-item w3-button" onclick="openCity('gonggi')">공지사항</button>
-				<button class="w3-bar-item w3-button" onclick="openCity('haksa')">학사공지</button>
-			</div>
-			<div id="potal" class="w3-container city">
-				<table class="main-table">
-					<tbody>
-						<tr>
-							<td><a href="#">포털내용0</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">포털내용1</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">포털내용2</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div id="gonggi" class="w3-container city" style="display: none">
-				<table class="main-table">
-					<tbody>
-						<tr>
-							<td><a href="#">공지내용0</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">공지내용1</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">공지내용2</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div id="haksa" class="w3-container city" style="display: none">
-				<table class="main-table">
-					<tbody>
-						<tr>
-							<td><a href="#">학사내용0</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">학사내용1</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">학사내용2</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+	<div class="content_header">
+		<h1 class="content_header_messge">환영합니다 ~^^! 아이티윌대학교입니다~</h1>
 	</div>
+	<div class="content_center">
+		<div class="content_wrap">
+			<!-- login -->
+			<div class="login">
+				<form action="controller?login=student" method="post">
+					<!-- controller?type=login -->
+					<h2 class="login-title">통합로그인</h2>
+					<input type="text" name="id" class="login_input" placeholder="헉번">
+					<input type="password" name="pwd" class="login_input" placeholder="비밀번호"> 
+					<input type="submit" value="로그인" class="login-btn" onsubmit="login()">
+				</form>
+				<div class="search-login">
+					<span class="login-search"><a href="#">학번/교번 찾기</a></span> <span
+						class="login-reset"><a href="#">비밀번호초기화</a></span>
+				</div>
+			</div>
+			<!-- notice -->
+			<div class="notice">
+				<div class="w3-bar w3-black">
+					<a href="javascript:openCity('potal')"
+						class="w3-bar-item w3-button current" data-tab="tab-1">포털공지</a> <a
+						href="javascript:openCity('gonggi')" class="w3-bar-item w3-button"
+						data-tab="tab-2">공지사항</a> <a href="javascript:openCity('haksa')"
+						class="w3-bar-item w3-button" data-tab="tab-3">학사공지</a>
+				</div>
+				<div id="potal" class="w3-container city">
+					<div>
+						<div class="tab-content on" id="tab-1">
+							<table class="main-table">
+								<colgroup>
+									<col width="10%">
+									<col width="70%">
+									<col width="20%">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td><a href="#">[공지]</a></td>
+										<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+										<td><a href="#">2022-05-05</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">[공지]</a></td>
+										<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+										<td><a href="#">2022-05-05</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">[공지]</a></td>
+										<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+										<td><a href="#">2022-05-05</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">[공지]</a></td>
+										<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+										<td><a href="#">2022-05-05</a></td>
+									</tr>
+									<tr>
+										<td><a href="#">[공지]</a></td>
+										<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+										<td><a href="#">2022-05-05</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+
+				<div id="gonggi" class="w3-container city" style="display: none">
+					<table class="main-table">
+						<colgroup>
+							<col width="10%">
+							<col width="70%">
+							<col width="20%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="haksa" class="w3-container city" style="display: none">
+					<table class="main-table">
+						<colgroup>
+							<col width="10%">
+							<col width="70%">
+							<col width="20%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">[공지]</a></td>
+								<td><a href="#">공지내용공지내용공지내용공지내용공지내용</a></td>
+								<td><a href="#">2022-05-05</a></td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+<c:if test="${not empty param.error }">
+	<script>
+		alert("아이디 혹은 비밀번호가 맞지 않습니다.");
+	</script>
+</c:if>
+<c:if test="${param.loginFail == 'error'}">
+	<script>
+		alert("이미 존재하는 이메일입니다.");
+	</script>
+</c:if>
 </div>

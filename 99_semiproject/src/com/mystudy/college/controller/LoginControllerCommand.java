@@ -14,20 +14,18 @@ import com.mystudy.college.model.command.StudentInsertCommand;
 
 
 @WebServlet("/controller")
-public class ControllerCommand extends HttpServlet{
+public class LoginControllerCommand extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(">> FrontControllerCommand.doGet() 실행~~");
-		String type = request.getParameter("type");
-		String student = request.getParameter("student");
+		String login = request.getParameter("login");
+
 		
 		Command command = null;
 		
-		if ("stlogin".equals(type)) { //서브페이지 이동 
+		if ("student".equals(login)) { //서브페이지 이동 
 			command = new StLoginCommand();
-		}else if ("insert".equals(student)) { //서브페이지 이동 
-			command = new StudentInsertCommand();
 		}
 //		else if("fullname".equals(type)) {
 //			command = new FullnameCommand();

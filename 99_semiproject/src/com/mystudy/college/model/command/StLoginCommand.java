@@ -14,18 +14,31 @@ public class StLoginCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
+		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
+		
+		if(id.trim() == "" || pwd.trim() == "") {
+			return "index.jsp";
+		}
+		
+		
 		StudentVO vo = new StudentVO();
-		vo.setSt_id(id);
+		vo.setSt_id(Integer.parseInt(id));
 		vo.setSt_pwd(pwd);
+		System.out.println(id);
+		System.out.println(pwd);
 		System.out.println(vo);
+		if(AuthorityDAO.stlogin(vo) == null) {
+			return "index.jsp";
+		}
+		AuthorityDAO.stlogin(vo);
+		request.setAttribute("id", id);
 //		if (AuthorityDAO.stlogin(vo) == null) {
 //			return "index.jsp";			
 //		}else {
 //			return "main.jsp";
 //		}
-		return "index.jsp";	
+		return "main.jsp";	
 		
 	}
 
