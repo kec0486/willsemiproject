@@ -13,6 +13,7 @@ public class NoticeboardVO {
 	private String n_title; //제목
 	private String n_savefilename; //저장된 이름 
 	
+	public NoticeboardVO() {}
 	public NoticeboardVO(int n_num, Date n_regdate, int ad_id, String n_contents, int c_id, String n_orgfilename,
 			String n_title, String n_savefilename) {
 		super();
