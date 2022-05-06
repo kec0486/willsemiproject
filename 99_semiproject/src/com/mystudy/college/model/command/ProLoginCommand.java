@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mystudy.college.model.dao.AuthorityDAO;
+import com.mystudy.college.model.vo.ProfessorVO;
 import com.mystudy.college.model.vo.StudentVO;
-import com.sun.org.apache.bcel.internal.generic.ATHROW;
 
-public class StLoginCommand implements Command {
+public class ProLoginCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,22 +20,16 @@ public class StLoginCommand implements Command {
 		if(id.trim() == "" || pwd.trim() == "") {
 			return "index.jsp";
 		}
+		ProfessorVO vo = new ProfessorVO();
+		vo.setPro_id(Integer.parseInt(id));
+		vo.setPro_pwd(pwd);
 		
-		
-		StudentVO vo = new StudentVO();
-		vo.setSt_id(Integer.parseInt(id));
-		vo.setSt_pwd(pwd);
-		System.out.println(id);
-		System.out.println(pwd);
-		System.out.println(vo);
-		
-		if(AuthorityDAO.stlogin(vo) == null) {
+		if(AuthorityDAO.prologin(vo) == null) {
 			return "index.jsp";
 		}
-		StudentVO list = AuthorityDAO.stlogin(vo);
+		ProfessorVO list = AuthorityDAO.prologin(vo);
 		request.setAttribute("list", list);
 		return "main.jsp";	
-		
 	}
 
 }

@@ -50,14 +50,14 @@
 			<div class="login">
 				<form action="controller?login=student" method="post">
 					<!-- controller?type=login -->
-					<h2 class="login-title">통합로그인</h2>
+					<h2 class="login-title">학생로그인</h2>
 					<input type="text" name="id" class="login_input" placeholder="헉번">
 					<input type="password" name="pwd" class="login_input" placeholder="비밀번호"> 
 					<input type="submit" value="로그인" class="login-btn" onsubmit="login()">
 				</form>
 				<div class="search-login">
-					<span class="login-search"><a href="#">학번/교번 찾기</a></span> <span
-						class="login-reset"><a href="#">비밀번호초기화</a></span>
+					<span class="login-search"><a href="searchid.jsp">학번/교번 찾기</a></span> 
+					<!-- <span class="login-reset"><a href="#">비밀번호초기화</a></span> -->
 				</div>
 			</div>
 			<!-- notice -->

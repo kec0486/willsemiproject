@@ -4,17 +4,33 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="authority">
 
-
+	<!-- 권한 로그인 -->
 	<select id="stlogin" parameterType="StudentVO" resultType="StudentVO">
 		SELECT * FROM STUDENT WHERE ST_ID = #{st_id} AND ST_PWD = #{st_pwd}
 	</select>
 
 	<select id="prologin" parameterType="ProfessorVO" resultType="ProfessorVO">
-		SELECT * FROM PROFESSOR WHERE PRO_ID = #{PRO_ID}
+		SELECT * FROM PROFESSOR WHERE PRO_ID = #{pro_id}
 	</select>
 	
 	<select id="adminlogin" parameterType="AdminAccountVO" resultType="AdminAccountVO">
-		SELECT * FROM ADMINACCOUNT WHERE AD_ID = #{AD_ID}
+		SELECT * FROM ADMINACCOUNT WHERE AD_ID = #{ad_id}
+	</select>
+	<!-- 권한 학번/id 찾기 -->
+	<select id="stsearchid" parameterType="StudentVO" resultType="StudentVO">
+		SELECT * FROM STUDENT WHERE ST_NAME = #{st_name} AND ST_EMAIL = #{st_email}
+	</select>
+
+	<select id="prosearchid" parameterType="ProfessorVO" resultType="ProfessorVO">
+		SELECT * FROM PROFESSOR WHERE PRO_ID = #{pro_id}
+	</select>
+	
+	<select id="adminsearchid" parameterType="AdminAccountVO" resultType="AdminAccountVO">
+		SELECT * FROM ADMINACCOUNT WHERE AD_ID = #{ad_id}
+	</select>
+	
+	<select id="select_MA_NAME" parameterType="MajorVO" resultType="MajorVO">
+		SELECT * FROM MAJOR WHERE MA_CODE = #{ma_code}
 	</select>
 </mapper>
 

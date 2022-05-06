@@ -12,5 +12,8 @@
 		<br>
 		<br>
 	</p>
-	<div></div>
+	<div class="admin_page">
+		<a href="professor/index.jsp"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; professor</a>
+		<a href="admin/index.jsp"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; admin</a>
+	</div>
 </footer>
