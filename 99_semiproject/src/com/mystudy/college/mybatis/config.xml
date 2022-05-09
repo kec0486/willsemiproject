@@ -4,41 +4,67 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<settings>
-		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
-	
+
 	<typeAliases>
-		<typeAlias type="com.mystudy.college.model.vo.AdminAccountVO" alias="AdminAccountVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.LectureVO" alias="LectureVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.MajorVO" alias="MajorVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.NoticeboardVO" alias="NoticeboardVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.ProfessorVO" alias="ProfessorVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.RegistrationVO" alias="RegistrationVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.ScholarshipVO" alias="ScholarshipVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.StudentVO" alias="StudentVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.SubjectVO" alias="SubjectVO"/>
-		<typeAlias type="com.mystudy.college.model.vo.TuitionVO" alias="TuitionVO"/>
-	
+		<typeAlias
+			type="com.mystudy.college.model.vo.AdminAccountVO"
+			alias="AdminAccountVO" />
+		<typeAlias type="com.mystudy.college.model.vo.LecSubjectVO"
+			alias="LecSubjectVO" />
+		<typeAlias type="com.mystudy.college.model.vo.LectureVO"
+			alias="LectureVO" />
+		<typeAlias type="com.mystudy.college.model.vo.MajorVO"
+			alias="MajorVO" />
+		<typeAlias type="com.mystudy.college.model.vo.NoticeboardVO"
+			alias="NoticeboardVO" />
+		<typeAlias type="com.mystudy.college.model.vo.ProfessorVO"
+			alias="ProfessorVO" />
+		<typeAlias
+			type="com.mystudy.college.model.vo.RegistrationVO"
+			alias="RegistrationVO" />
+		<typeAlias type="com.mystudy.college.model.vo.RegiSubVO"
+			alias="RegiSubVO" />
+		<typeAlias type="com.mystudy.college.model.vo.ScholarshipVO"
+			alias="ScholarshipVO" />
+		<typeAlias type="com.mystudy.college.model.vo.StudentVO"
+			alias="StudentVO" />
+		<typeAlias type="com.mystudy.college.model.vo.StuRegiVO"
+			alias="StuRegiVO" />
+		<typeAlias type="com.mystudy.college.model.vo.SubjectVO"
+			alias="SubjectVO" />
+		<typeAlias type="com.mystudy.college.model.vo.TuitionVO"
+			alias="TuitionVO" />
+
 	</typeAliases>
 
-  <environments default="development">
-    <environment id="development">
-      <transactionManager type="JDBC"/>
-      <dataSource type="POOLED">
-        <property name="driver" value="oracle.jdbc.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-        <property name="username" value="COLLEGE"/>
-        <property name="password" value="COLLEGE"/>
-      </dataSource>
-    </environment>
-  </environments>
-  
-  <mappers>
-    <mapper resource="com/mystudy/college/mybatis/Authoritymapper.xml"/>
-    <mapper resource="com/mystudy/college/mybatis/Adminmapper.xml"/>
-    <mapper resource="com/mystudy/college/mybatis/Noticeboardmapper.xml"/>
-  </mappers>
-  
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="COLLEGE" />
+				<property name="password" value="COLLEGE" />
+			</dataSource>
+		</environment>
+	</environments>
+
+
+	<mappers>
+		<mapper
+			resource="com/mystudy/college/mybatis/Authoritymapper.xml" />
+		<mapper resource="com/mystudy/college/mybatis/Adminmapper.xml" />
+		<mapper
+			resource="com/mystudy/college/mybatis/Noticeboardmapper.xml" />
+		<mapper
+			resource="com/mystudy/college/mybatis/Professormapper.xml" />
+		<mapper
+			resource="com/mystudy/college/mybatis/studentmapper.xml" />
+	</mappers>
+
 </configuration>
 
 
