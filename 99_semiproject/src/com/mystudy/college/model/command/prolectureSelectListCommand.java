@@ -15,7 +15,7 @@ public class prolectureSelectListCommand implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 교수 아이디로 교수 강의 목록 리스트 가져오기
-
+		
 		int pro_id = Integer.parseInt(request.getParameter("pro_id"));
 
 		// 1. DB데이터 조회하고 가져오기

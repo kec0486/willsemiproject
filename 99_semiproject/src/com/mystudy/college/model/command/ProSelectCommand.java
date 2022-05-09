@@ -9,9 +9,11 @@ import com.mystudy.college.model.command.Command;
 import com.mystudy.college.model.vo.ProfessorVO;
 
 public class ProSelectCommand implements Command {
+	
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		return "professorSelect.jsp";
 	}
 

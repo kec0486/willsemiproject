@@ -35,16 +35,17 @@
 				<div class="aside-menu">
 					<h3>개인정보관리</h3>
 					<ul>
-						<li><a href="#">개인정보 조회/수정</a></li>
+						<li><a href="controller?type=professorSelectList?id=${id }">개인정보 조회</a></li>
+						<li><a href="professorUpdate.jsp">개인정보 수정</a></li>
 					</ul>
 					<h3>강의정보</h3>
 					<ul>
-						<li class="ul-toggle">학생 정보 조회
+						<li class="ul-toggle">강의 관리
 							<ul class="ul-toggle-inner">
-								<li><a href="#">등록금 정보입력</a></li>
-								<li><a href="#">등록금 정보수정</a></li>
+								<li><a href="controller?type=prolectureSelectList"> 강의 정보 조회 </a></li>
+								<li><a href="proStuRegi.jsp"> 학생 성적 입력 </a></li>
+								<li><a href="proRegiUpdate.jsp"> 학생 성적 수정  </a></li>
 							</ul>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -53,7 +54,9 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>교수 메인 </h1>
+					
+					
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -69,14 +72,11 @@
 			</div>
 		</section>
 	</div>
-<<<<<<< HEAD
 	<!-- footer -->
 	<jsp:include page="footer.jsp"></jsp:include>
 
-=======
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
 	
->>>>>>> branch 'master' of https://github.com/kec0486/willsemiproject.git
 </body>
 </html>

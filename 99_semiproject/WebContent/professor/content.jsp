@@ -10,35 +10,7 @@
 		}
 		document.getElementById(cityName).style.display = "block";
 	}
-	/* function loginCheck(){
-		var id = $('input[name=username]'); //아이디
-		var pwd = $('input[name=password]'); //비밀번호
-		if(id.val() == ''){
-			alert('아이디를 입력해주세요');
-			id.focus();
-			return false;
-		}else if(pwd.val() == ''){
-			alert('비밀번호를 입력해주세요');
-			pwd.focus();
-			return false;
-		}
-		return true;
-	}
-	function login() {
-		$(function(){
-			
-			if($("#id").trim().val() == ''){
-				alert("학번를 입력해주세요.");
-		        id.focus();
-		        return;
-			}
-			if($("#pwd").trim().val() == ''){
-				alert("비밀번호를 입력해주세요.");
-		        id.focus();
-		        return;
-			}
-		});	
-	} */
+	
 </script>
 <div class="content">
 	<div class="content_header">

@@ -36,7 +36,8 @@ public class proUpdateListCommand implements Command {
 		
 		System.out.println(list);
 //		// 2. DB데이터 request scope 에 저장
-		request.setAttribute("list", list);
+		request.getSession().setAttribute("list", list);
+		
 //		
 //		// 3. prosessorUpdateList.jsp 페이지로 위임(전달) 처리
 		return "professorUpdateList.jsp";

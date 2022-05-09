@@ -1,97 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>proRegiInsert.jsp</title>
-<link href="/css/default.css" rel="stylesheet">
-<link href="/js/default.js" rel="javascript">
-<style>
-.styled-table {
-	border-collapse: collapse;
-	margin: 25px 0;
-	font-size: 0.9em;
-	font-family: sans-serif;
-	min-width: 400px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
+<title>아이티윌대학교 포털</title>
+<link href="../css/default.css" rel="stylesheet">
+<link href="../js/default.js" rel="javascript">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+		$('h3').click(function() {
+			$('.aside-menu ul').hide();
+			$(this).next().show();
+		});
 
-.styled-table thead tr {
-	background-color: #009879;
-	color: #ffffff;
-	text-align: left;
-}
-
-.styled-table th, .styled-table td {
-	padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-	border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-	background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-	border-bottom: 2px solid #009879;
-}
-</style>
+		$('.ul-toggle').click(function() {
+			$('.ul-toggle-inner').show();
+		});
+	});
+</script>
 </head>
 <body>
+
 	<!-- header -->
 	<jsp:include page="header.jsp"></jsp:include>
+
 	<!-- content -->
-	<div class="container">
+	<div class="container study-manage">
 		<!-- aside -->
 		<aside>
 			<div class="aside">
 				<h2>교수</h2>
-				<h3>학생/교수 정보관리</h3>
-				<ul>
-					<li>개인정보 관리
-						<ul>
-							<li><a href="professorSelect.jsp">개인정보 조회 </a></li>
-							<li><a href="professorUpdate.jsp">개인정보 수정 </a></li>
-						</ul>
-					</li>
-					<li>강의정보 관리
-						<ul>
-							<li><a href="proLectureSelect.jsp">나의 강의 정보 조회</a></li>
-							<li><a href="proRegiInsert.jsp">학생 성적 입력 </a></li>
-							<li><a href="proRegiUpdate.jsp">학생 성적 수정 </a></li>
-						</ul>
-					</li>
-				</ul>
-
-
+				<div class="aside-menu">
+					<h3>개인정보관리</h3>
+					<ul>
+						<li><a href="professorSelect.jsp">개인정보 조회</a></li>
+						<li><a href="professorUpdate.jsp">개인정보 수정</a></li>
+					</ul>
+					<h3>강의정보</h3>
+					<ul>
+						<li class="ul-toggle">강의 관리
+							<ul class="ul-toggle-inner">
+								<li><a href="proLectureSelect.jsp"> 강의 정보 조회 </a></li>
+								<li><a href="proRegiInsert.jsp"> 학생 성적 입력 </a></li>
+								<li><a href="proRegiUpdate.jsp"> 학생 성적 수정 </a></li>
+							</ul>
+					</ul>
+				</div>
 			</div>
 		</aside>
-
-		<h1>교수 페이지</h1>
 		<!-- section -->
 		<section>
 			<div class="section">
-				<h1>학생성적 입력</h1>
-				<table class="styled-table">
+				<div class="container">
+					<h1>학생성적 입력</h1>
+					<table class="styled-table">
 
-					<form action="professor" method="post">
-						과목 : <input type="text" name="sub_code"> 학생 이름 : <input
-							type="text" name="st_name"> 점수 : <input type="text"
-							name="re_score"> 성적 : <input type="text" name="re_grade">
-						<input type="submit" value="성적입력"> <input type="hidden"
-							name="type" value="proRegiInsert_ok">
-					</form>
-				</table>
+						<form action="controller" method="post">
+							과목 : <input type="text" name="sub_code"> 
+							학생 이름 : <input type="text" name="st_name"> 
+							점수 : <input type="text" name="re_score"> 
+							성적 : <input type="text" name="re_grade">
+							<input type="submit" value="성적입력"> 
+							<input type="hidden" name="type" value="proRegiInsert_ok">
+						</form>
+					</table>
+
+
+				</div>
+				
+
 			</div>
 		</section>
 	</div>
 	<!-- footer -->
 	<jsp:include page="footer.jsp"></jsp:include>
+
+	<%-- <!-- footer -->
+	<jsp:include page="footer.jsp" ></jsp:include> --%>
+
 </body>
 </html>
