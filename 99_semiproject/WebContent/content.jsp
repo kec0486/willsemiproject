@@ -26,7 +26,7 @@
 		//alert("noticeboardView(n_num) 정상작동"); 
 		
 		//윈도우 팝업창으로 게시물 띄우기
-		window.open("noticeboard?type=noticeboardView&n_num=" + n_num, n_title, "_blank");
+		window.open("noticeboard?type=noticeboardView&n_num=" + n_num, n_title, "_blank").resizeTo(500,600);
 		//location.href = "noticeboard?type=noticeboardView&n_num=" + n_num;
 	}
 	
