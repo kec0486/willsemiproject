@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,7 @@
 
 	<!-- header -->
 	<jsp:include page="header.jsp"></jsp:include>
-	
+
 	<!-- content -->
 	<div class="container">
 		<!-- aside -->
@@ -59,7 +59,7 @@
 		</section>
 	</div>
 	<!-- footer -->
-	<jsp:include page="footer.jsp" ></jsp:include>
-	
+	<jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>

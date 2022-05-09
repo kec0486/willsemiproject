@@ -9,6 +9,7 @@
 <% 	
 	List<NoticeboardVO> list = NoticeboardDAO.getAllList();
 	request.setAttribute("list", list);
+	System.out.println("list: " + list);
 %>
 <script type="text/javascript">
 	function openCity(cityName) {

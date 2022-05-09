@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="student">
+
+
+	<!-- 학생 개인정보 관리 -->
+	<select id="studentSelect" parameterType="int"
+		resultType="com.mystudy.college.model.vo.StudentVO">
+		SELECT *
+		FROM STUDENT
+		WHERE st_id = #{st_id }
+	</select>
+
+	<!-- 학생 개인정보 수정 -->
+	<update id="studentUpdate"
+		parameterType="com.mystudy.college.model.vo.StudentVO">
+		UPDATE STUDENT
+		SET
+		ST_PWD = #{st_pwd },
+		ST_MOBILE= #{st_mobile },
+		ST_PHONE = #{st_phone },
+		ST_EMAIL=#{st_email },
+		ST_ADDR = #{st_addr }
+		WHERE ST_ID = #{st_id }
+	</update>
+
+	<!-- 학생 성적 조회  -->
+	<select id="stuRegiAll" parameterType="int"
+		resultType="com.mystudy.college.model.vo.RegiSubVO">
+
+		SELECT RE.RE_TERM, RE.RE_SCORE, RE.RE_GRADE, SU.SUB_NAME, SU.SUB_CODE
+		FROM REGISTRATION RE JOIN SUBJECT SU
+			ON RE.SUB_CODE = SU.SUB_CODE
+		WHERE RE.ST_ID = #{st_id }
+		ORDER BY RE.SUB_CODE, RE.RE_TERM
+
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+
