@@ -10,14 +10,16 @@ public class RegistrationVO {
 	public RegistrationVO() {
 	}
 	
-	public RegistrationVO(int sub_code, String re_grade, String re_term, int st_id, int re_score) {
+	public RegistrationVO(String re_term,int re_score, String re_grade, int sub_code, int st_id) {
 		super();
-		this.sub_code = sub_code;
-		this.re_grade = re_grade;
 		this.re_term = re_term;
-		this.st_id = st_id;
 		this.re_score = re_score;
+		this.re_grade = re_grade;
+		this.sub_code = sub_code;
+		this.st_id = st_id;
 	}
+	
+
 	public int getSub_code() {
 		return sub_code;
 	}
