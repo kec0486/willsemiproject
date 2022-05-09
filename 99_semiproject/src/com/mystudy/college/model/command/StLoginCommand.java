@@ -32,8 +32,7 @@ public class StLoginCommand implements Command {
 			return "index.jsp";
 		}
 		StudentVO list = AuthorityDAO.stlogin(vo);
-		request.setAttribute("list", list);
-
+		request.getSession().setAttribute("list", list);
 
 		return "main.jsp";	
 		

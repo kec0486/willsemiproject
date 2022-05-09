@@ -31,7 +31,7 @@ public class StudentDAO {
 	}
 	public static StudentVO select(int id) {
 		SqlSession ss = DBService.getFactory().openSession();
-		StudentVO vo = ss.selectOne("admin.stselect",id);
+		StudentVO vo = ss.selectOne("student.studentSelect",id);
 		ss.close();
 		return vo;
 	}

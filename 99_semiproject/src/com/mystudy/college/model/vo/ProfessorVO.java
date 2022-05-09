@@ -1,17 +1,18 @@
 package com.mystudy.college.model.vo;
 
 public class ProfessorVO {
-	private String pro_ssn;
+	
 	private int pro_id;
-	private String pro_name;
 	private String pro_pwd;
+	private String pro_name;
+	private String pro_ssn;
 	private String pro_position;
-	private String pro_phone;
-	private String pro_addr;
-	private int ma_code;
 	private String pro_office;
 	private String pro_mobile;
+	private String pro_phone;
 	private String pro_email;
+	private String pro_addr;
+	private int ma_code;
 
 	public ProfessorVO() {
 	}
@@ -30,10 +31,6 @@ public class ProfessorVO {
 		this.pro_office = pro_office;
 		this.pro_mobile = pro_mobile;
 		this.pro_email = pro_email;
-	}
-
-	public ProfessorVO() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getPro_ssn() {

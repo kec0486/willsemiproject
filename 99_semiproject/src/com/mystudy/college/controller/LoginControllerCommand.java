@@ -26,7 +26,7 @@ public class LoginControllerCommand extends HttpServlet{
 		
 		if ("student".equals(login)) { //서브페이지 이동 
 			command = new StLoginCommand();
-		}else if ("searchidfind".equals(login)) { //서브페이지 이동 
+		} else if ("searchidfind".equals(login)) { //서브페이지 이동 
 			command = new StSearchCommand();
 		}
 		String path = command.exec(request, response);

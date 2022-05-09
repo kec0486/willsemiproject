@@ -19,6 +19,27 @@
 			$('.ul-toggle-inner').show();
 		});
 	});
+	
+	function check_go(st_id) {
+			
+		alert("check_go(st_id) 정상작동"); 
+		
+		//윈도우 팝업창으로 게시물 띄우기
+		//window.open("tuition?type=tuitionCheck&st_id=" + st_id,"등록금조회", "_blank").resizeTo(400,500);
+		
+		//컨트롤러로 이동
+		location.href = "tuition?type=tuitionCheck&st_id=" + st_id;
+	}
+	function student_go(st_id) {
+			
+			alert("student_go(st_id) 정상작동"); 
+			
+			//윈도우 팝업창으로 게시물 띄우기
+			//window.open("tuition?type=tuitionCheck&st_id=" + st_id,"등록금조회", "_blank").resizeTo(400,500);
+			
+			//컨트롤러로 이동
+			location.href = "student?type=list&st_id=" + st_id;
+	}
 </script>
 </head>
 <body>
@@ -38,7 +59,7 @@
 				<div class="aside-menu">
 					<h3>개인정보</h3>
 					<ul>
-						<li><a href="student/studentlist.jsp">학생 정보 조회 / 수정</a></li>
+						<li><a href="javascript:void(0);" onclick="student_go(${list.st_id});">학생 정보 조회 / 수정</a></li>
 					</ul>
 					<h3>성적정보</h3>
 					<ul>
@@ -56,7 +77,7 @@
 					</ul>
 					<h3>고지서/증명서 조회</h3>
 					<ul>
-						<li><a href="admin?tuition=insert">증명서 발급</a></li>
+						<li><a href="javascript:void(0);" onclick="check_go(${list.st_id});">증명서 발급</a></li>
 					</ul>
 				</div>
 
