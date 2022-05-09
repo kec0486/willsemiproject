@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mystudy.college.model.command.Command;
-import com.mystudy.college.model.dao.EmployeeDAO;
 import com.mystudy.college.model.dao.ProfessorDAO;
-import com.mystudy.college.model.vo.LecSubjectVO;
 import com.mystudy.college.model.vo.ProfessorVO;
 
 public class professorSelectListCommand implements Command {

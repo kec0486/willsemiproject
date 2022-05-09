@@ -12,7 +12,10 @@ public class ProfessorVO {
 	private String pro_office;
 	private String pro_mobile;
 	private String pro_email;
-	
+
+	public ProfessorVO() {
+	}
+
 	public ProfessorVO(String pro_ssn, int pro_id, String pro_name, String pro_pwd, String pro_position,
 			String pro_phone, String pro_addr, int ma_code, String pro_office, String pro_mobile, String pro_email) {
 		super();
@@ -124,11 +127,5 @@ public class ProfessorVO {
 				+ ", ma_code=" + ma_code + ", pro_office=" + pro_office + ", pro_mobile=" + pro_mobile + ", pro_email="
 				+ pro_email + "]";
 	}
-	
-	
-	
-	}
-	
-	
-	
 
+}

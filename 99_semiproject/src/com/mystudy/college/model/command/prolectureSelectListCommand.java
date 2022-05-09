@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mystudy.college.model.dao.LectureDAO;
 import com.mystudy.college.model.dao.ProfessorDAO;
 import com.mystudy.college.model.vo.LecSubjectVO;
 
@@ -21,7 +20,7 @@ public class prolectureSelectListCommand implements Command {
 
 		// 1. DB데이터 조회하고 가져오기
 		List<LecSubjectVO> list = ProfessorDAO.lecSelect(pro_id);
-		
+		System.out.println(list);
 		// 2. DB데이터 request scope 에 저장
 		request.setAttribute("list", list);
 		

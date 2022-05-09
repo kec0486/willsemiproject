@@ -7,6 +7,9 @@ public class RegistrationVO {
 	private int st_id; //학번 
 	private int re_score; //점수 
 	
+	public RegistrationVO() {
+	}
+	
 	public RegistrationVO(int sub_code, String re_grade, String re_term, int st_id, int re_score) {
 		super();
 		this.sub_code = sub_code;

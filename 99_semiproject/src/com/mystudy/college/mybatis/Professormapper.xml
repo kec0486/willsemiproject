@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="college">
+
+	<!-- 교수님 개인정보 관리 -->
+	<select id="professorSelect" parameterType="int"
+		resultType="com.mystudy.college.model.vo.ProfessorVO">
+		SELECT PRO_ID, PRO_PWD, PRO_NAME, PRO_SSN, PRO_POSITION,
+		PRO_OFFICE, PRO_MOBILE, PRO_PHONE, PRO_EMAIL, PRO_ADDR, MA_CODE
+		FROM
+		PROFESSOR
+		WHERE PRO_ID = #{pro_id }
+	</select>
+
+	<!-- 교수 개인정보 수정 -->
+	<update id="professorUpdate"
+		parameterType="com.mystudy.college.model.vo.ProfessorVO">
+		UPDATE
+		PROFESSOR
+		SET PRO_PWD = #{pro_pwd },
+		PRO_PHONE =
+		#{pro_phone },
+		PRO_ADDR = #{pro_addr },
+		PRO_OFFICE= #{pro_office },
+		PRO_MOBILE= #{pro_mobile },
+		PRO_EMAIL=#{pro_email }
+		WHERE PRO_ID =
+		#{pro_id }
+	</update>
+
+	<!-- 교수님 나의 강의 정보 조회 -->
+	<select id="LectureSelect" parameterType="int"
+		resultType="com.mystudy.college.model.vo.LecSubjectVO">
+		SELECT L.PRO_ID,
+		L.SUB_CODE,
+		S.SUB_NAME,
+		S.SUB_LEVEL,
+		S.SUB_CREDIT,
+		S.SUB_DAY,
+		S.SUB_TIME,
+		S.SUB_CLASS
+		FROM SUBJECT S JOIN LECTURE L
+		ON S.SUB_CODE = L.SUB_CODE
+		WHERE L.PRO_ID = #{pro_id }
+	</select>
+
+	<!-- 교수 학생성적 관리 -->
+	<!-- 자신의 강의 학생 리스트 -->
+	<select id="LectureStudentList" parameterType="int"
+		resultType="com.mystudy.college.model.vo.StuRegiVO">
+		SELECT ST.*, RE.*
+		FROM STUDENT ST, REGISTRATION RE
+		where
+		ST.ST_ID = RE.ST_ID
+		and re.sub_code = #{sub_code }
+	</select>
+
+	<!-- 학생 성적 입력 -->
+	<insert id="proRegiInsert"
+		parameterType="com.mystudy.college.model.vo.RegistrationVO">
+		INSERT INTO REGISTRATION(RE_TERM, RE_SCORE,
+		RE_GRADE,RE_SCORE,ST_ID)
+		VALUES (#{re_term }, #{re_score }, #{re_grade }, #{re_score }, #{st_id })
+	</insert>
+
+	<!-- 학생성적 수정 -->
+	<update id="proRegiUpdate"
+		parameterType="com.mystudy.college.model.vo.RegistrationVO">
+		UPDATE REGISTRATION
+		SET
+		RE_SCORE = #{re_score },
+		RE_GRADE = #{re_grade }
+		WHERE ST_ID = #{st_id }
+		AND SUB_CODE = #{sub_code }
+
+	</update>
+</mapper>
+
+
+
+
+
+
+
