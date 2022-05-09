@@ -1,19 +1,16 @@
 package com.mystudy.college.model.command;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mystudy.college.model.dao.AuthorityDAO;
-import com.mystudy.college.model.dao.NoticeboardDAO;
-import com.mystudy.college.model.vo.NoticeboardVO;
+import com.mystudy.college.model.vo.AdminAccountVO;
 import com.mystudy.college.model.vo.StudentVO;
-import com.sun.org.apache.bcel.internal.generic.ATHROW;
 
-public class StLoginCommand implements Command {
+public class AdminLoginCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,19 +21,20 @@ public class StLoginCommand implements Command {
 			return "index.jsp";
 		}
 		
-		StudentVO vo = new StudentVO();
-		vo.setSt_id(Integer.parseInt(id));
-		vo.setSt_pwd(pwd);
 		
-		if(AuthorityDAO.stlogin(vo) == null) {
+		AdminAccountVO vo = new AdminAccountVO();
+		vo.setAd_id(Integer.parseInt(id));
+		vo.setAd_pwd(pwd);
+		System.out.println(id);
+		System.out.println(pwd);
+		System.out.println(vo);
+		
+		if(AuthorityDAO.adminlogin(vo) == null) {
 			return "index.jsp";
 		}
-		StudentVO list = AuthorityDAO.stlogin(vo);
+		AdminAccountVO list = AuthorityDAO.adminlogin(vo);
 		request.setAttribute("list", list);
-
-
 		return "main.jsp";	
-		
 	}
 
 }

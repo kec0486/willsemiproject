@@ -32,9 +32,9 @@
 		<aside>
 			<div class="aside">
 				<!-- <h2>학생</h2> -->
-				<div class="aside-search">
+				<!-- <div class="aside-search">
 					<input type="text" placeholder="메뉴, 공지사항 검색...">
-				</div>
+				</div> -->
 				<div class="aside-menu">
 					<h3>개인정보</h3>
 					<ul>
@@ -66,7 +66,7 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<h1>container</h1>
+					<!-- <h1>container</h1> -->
 				</div>
 				
 				

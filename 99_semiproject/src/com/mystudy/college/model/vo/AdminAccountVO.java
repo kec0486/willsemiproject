@@ -22,6 +22,9 @@ public class AdminAccountVO {
 		this.ad_id = ad_id;
 		this.ad_pwd = ad_pwd;
 	}
+	public AdminAccountVO() {
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
 		return "AdminAccountVO [ad_id=" + ad_id + ", ad_pwd=" + ad_pwd + "]";

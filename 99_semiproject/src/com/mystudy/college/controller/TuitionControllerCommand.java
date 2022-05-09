@@ -8,28 +8,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mystudy.college.model.command.AdminLoginCommand;
 import com.mystudy.college.model.command.Command;
-import com.mystudy.college.model.command.StLoginCommand;
-import com.mystudy.college.model.command.StSearchCommand;
-import com.mystudy.college.model.command.StudentInsertCommand;
+import com.mystudy.college.model.command.TuitionCheckCommand;
 
-
-@WebServlet("/controller")
-public class LoginControllerCommand extends HttpServlet{
+@WebServlet("/tuition")
+public class TuitionControllerCommand extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(">> LoginControllerCommand.doGet() 실행~~");
-		String login = request.getParameter("login");
+		System.out.println(">> TuitionControllerCommand.doGet() 실행~~");
+		String type = request.getParameter("type");
+		
 		Command command = null;
 		
-		if ("student".equals(login)) { //서브페이지 이동 
-			command = new StLoginCommand();
-		}else if ("searchidfind".equals(login)) { //서브페이지 이동 
-			command = new StSearchCommand();
+		if ("tuitionCheck".equals(type)) {
+			command = new TuitionCheckCommand();
 		}
+			
 		String path = command.exec(request, response);
+		System.out.println(path);
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
@@ -38,5 +36,4 @@ public class LoginControllerCommand extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
 	}
-
 }

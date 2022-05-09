@@ -5,12 +5,6 @@ public class MajorVO {
 	private int ma_code; //학과코드
 	private String ma_name; //전공이름 
 	
-	public MajorVO(String ma_college, int ma_code, String ma_name) {
-		super();
-		this.ma_college = ma_college;
-		this.ma_code = ma_code;
-		this.ma_name = ma_name;
-	}
 	public String getMa_college() {
 		return ma_college;
 	}

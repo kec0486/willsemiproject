@@ -32,6 +32,10 @@ public class ProfessorVO {
 		this.pro_email = pro_email;
 	}
 
+	public ProfessorVO() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getPro_ssn() {
 		return pro_ssn;
 	}
