@@ -27,10 +27,11 @@ public class prolectureSelectListCommand implements Command {
 		int proId = Integer.parseInt(pro_id);
 		List<LecSubjectVO> lsvo = ProfessorDAO.lecSelect(proId);
 		System.out.println("lsvo : "+lsvo);
+		 
 		
 		
 		// 2. DB데이터 request scope 에 저장
-		request.setAttribute("lsvo", lsvo);
+		request.getSession().setAttribute("lsvo", lsvo);
 		
 		
 		// 3. professorSelectList.jsp 페이지로 위임(전달) 처리

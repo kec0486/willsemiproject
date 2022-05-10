@@ -17,6 +17,7 @@ import com.mystudy.college.model.command.ProUpdateCommand;
 import com.mystudy.college.model.command.lectureSelectCommand;
 import com.mystudy.college.model.command.proRegiInsertCommand;
 import com.mystudy.college.model.command.proRegiInsertOkCommand;
+import com.mystudy.college.model.command.proRegiUpdateCommand;
 import com.mystudy.college.model.command.proRegiUpdateOkCommand;
 import com.mystudy.college.model.command.proUpdateListCommand;
 import com.mystudy.college.model.command.professorSelectListCommand;
@@ -49,10 +50,16 @@ public class professorControllerCommand extends HttpServlet {
 			command = new prolectureSelectListCommand();
 		} else if ("ProStuRegiSelectList".equals(type)) { //교수 강의과목 성적 리스트 조회
 			command = new ProStuRegiSelectListCommand();
-		} else if ("proRegiInsert".equals(type)) { //교수 강의과목 학생정보 입력
+		} 
+		
+		else if ("proRegiInsert".equals(type)) { //교수 강의과목 학생정보 입력
 			command = new proRegiInsertCommand();
-		} else if ("proRegiInsert_ok".equals(type)) { //교수 강의과목 학생정보 입력
+	} else if ("proRegiInsert_ok".equals(type)) { //교수 강의과목 학생정보 입력
 			command = new proRegiInsertOkCommand();
+		} 
+		
+		else if ("proRegiUpdate".equals(type)) { //교수 강의과목 학생정보 수정
+			command = new proRegiUpdateCommand();
 		} else if ("proRegiUpdate_ok".equals(type)) { //교수 강의과목 학생정보 수정
 			command = new proRegiUpdateOkCommand();
 		}

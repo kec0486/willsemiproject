@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <header>
 	<div class="header_log">
-		<div class="log">학부생 ${list.st_name }</div>
+		<div class="log">학부생 ${list.st_name } </div>
 		<div class="logout">
 			<a href="index.jsp">로그아웃</a>		
 		</div>

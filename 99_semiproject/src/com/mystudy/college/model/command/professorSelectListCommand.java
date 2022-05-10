@@ -29,7 +29,7 @@ public class professorSelectListCommand implements Command {
 		
 		
 		// 2. DB데이터 request scope 에 저장
-		request.setAttribute("pvo", pvo);
+		request.getSession().setAttribute("pvo", pvo);
 		
 		return "professorSelectList.jsp";
 	}

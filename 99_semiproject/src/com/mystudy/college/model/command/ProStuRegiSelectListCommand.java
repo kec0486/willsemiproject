@@ -29,7 +29,7 @@ public class ProStuRegiSelectListCommand implements Command {
 				
 				
 				// 2. DB데이터 request scope 에 저장
-				request.setAttribute("srvo", srvo);
+				request.getSession().setAttribute("srvo", srvo);
 				
 				
 				// 3. proLectureSelectList.jsp 페이지로 위임(전달) 처리

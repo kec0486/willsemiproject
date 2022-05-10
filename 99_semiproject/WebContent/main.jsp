@@ -33,12 +33,13 @@
 	function student_go(st_id) {
 			
 			alert("student_go(st_id) 정상작동"); 
-			
-			//윈도우 팝업창으로 게시물 띄우기
-			//window.open("tuition?type=tuitionCheck&st_id=" + st_id,"등록금조회", "_blank").resizeTo(400,500);
-			
 			//컨트롤러로 이동
-			location.href = "student?type=list&st_id=" + st_id;
+			location.href = "student?type=studentSelectList&st_id=" + st_id;
+	}
+	
+	function go_stu(st_id) {
+		alert("check_go(st_id} 정상작동");
+		location.href = "student?type=studentSelectList&stu_id=" + stu_id;
 	}
 </script>
 </head>
@@ -59,11 +60,11 @@
 				<div class="aside-menu">
 					<h3>개인정보</h3>
 					<ul>
-						<li><a href="javascript:void(0);" onclick="student_go(${list.st_id});">학생 정보 조회 / 수정</a></li>
+						<li><a href="student?type=studentSelectList&st_id=${list.st_id }">학생 정보 조회 / 수정</a></li>
 					</ul>
 					<h3>성적정보</h3>
 					<ul>
-						<li><a href="student/studentlist.jsp">학년별 성적 확인 / 전체 성적확인</a></li>
+						<li><a href="student?type=stuSubjectList&st_id=${list.st_id }">학년별 성적 확인 / 전체 성적확인</a></li>
 					</ul>
 					<h3>수강정보</h3>
 					<ul>

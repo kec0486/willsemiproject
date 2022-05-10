@@ -14,14 +14,20 @@ public class studentSelectListCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("> studentSelectListCommand 실행");
+
 		// 학생 개인정보조회
 		// 파라미터 받은 것 가져오기
-		int selectId = Integer.parseInt(request.getParameter("selectId"));
+		String st_id = request.getParameter("st_id");
+		System.out.println(st_id);
 
 		// 1. DB데이터 조회하고 가져오기
-		List<StudentVO> list = StudentDAO.selectId(selectId);
+		int selectId = Integer.parseInt(st_id);
+				
+				
+		StudentVO svo = StudentDAO.selectId(selectId);
 		// 2. DB데이터 request scope 에 저장
-		request.setAttribute("list", list);
+		request.getSession().setAttribute("svo", svo);
 		// 3. professorSelectList.jsp 페이지로 위임(전달) 처리
 		return "studentSelectList.jsp";
 	}

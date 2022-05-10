@@ -14,8 +14,8 @@
 <body>
 	<h1>학생 성적 조회</h1>
 	<form action="student?type=studentRegiSelectList" method="post">
-		학번 입력 : <input type="text" name="st_id"> <input type="submit"
-			value="학번으로 검색"> <input type="hidden" name="type"
+		학번 입력 : <input type="text" name="st_id"> 
+		<input type="submit" value="학번으로 검색"> <input type="hidden" name="type"
 			value="studentRegiSelectList">
 	</form>
 
