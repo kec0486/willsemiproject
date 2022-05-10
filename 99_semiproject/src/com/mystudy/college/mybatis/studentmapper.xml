@@ -38,7 +38,56 @@
 
 	</select>
 
-
+	<resultMap type="SubjectVO" id="subjectMap">
+		<id column="sub_code" property="sub_code" />
+		<result column="sub_name" property="sub_name" />
+		<result column="sub_level" property="sub_level" />
+		<result column="sub_credit" property="sub_credit" />
+		<result column="sub_day" property="sub_day" />
+		<result column="sub_time" property="sub_time" />
+		<result column="sub_class" property="sub_class" />
+		
+		<!-- 1 : 다 관계의 경우 데이터 매핑시켜준다. 
+			association => 1 : 1 관계 
+			collection => 1 : 다 관계 (한명의 유저가 작성한 글 목록)
+			일반 컬럼과 pk 구분 가능 pk 칼럼에게는 result 아닌 id 사용
+		-->
+		<association javaType="RegistrationVO" property="RegistrationVO">
+			<result column="re_term" property="re_term"/>
+			<result column="re_score" property="re_score"/>
+			<result column="re_grade" property="re_grade"/>
+			<result column="sub_code" property="sub_code"/>
+			<result column="st_id" property="st_id"/>
+		</association>
+	</resultMap>
+	
+	<select id="subjectRegSelectAll"
+			 resultMap="subjectMap">
+		SELECT	*
+		FROM	SUBJECT S
+				, REGISTRATION R
+		WHERE	R.SUB_CODE = R.SUB_CODE
+		
+	</select>
+	<select id="sub_selectAll" resultType="SubjectVO">
+		SELECT * FROM SUBJECT ORDER BY SUB_CODE DESC
+	</select>
+	
+	<insert id="reg_insert" parameterType="RegistrationVO">
+		INSERT INTO REGISTRATION VALUES(#{re_term},
+										#{re_score},
+										#{re_grade},
+										#{sub_code},
+										#{st_id})
+	</insert>
+	
+	<select id="reg_select" parameterType="RegistrationVO" resultType="RegistrationVO">
+		SELECT * FROM REGISTRATION WHERE ST_ID = #{st_id} ORDER BY SUB_CODE
+	</select>
+	
+	<select id="sub_select" parameterType="SubjectVO" resultType="SubjectVO">
+		SELECT * FROM SUBJECT WHERE SUB_CODE = #{sub_code} ORDER BY SUB_CODE
+	</select>
 </mapper>
 
 

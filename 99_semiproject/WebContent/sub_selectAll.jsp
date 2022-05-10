@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,13 +87,32 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>수강과목조회</h1>
+					<table class="sub_find" border>
+						<tr>
+							<th>과목코드</th>
+							<th>과목명</th>
+							<th>학년</th>
+							<th>학점</th>
+							<th>강의요일</th>
+							<th>강의시간</th>
+							<th>강의실</th>
+							<th>수강신청</th>
+						</tr>
+						<c:forEach var="vo" items="${sublist }">
+							<tr>
+								<td>${vo.sub_code }</td>
+								<td>${vo.sub_name }</td>
+								<td>${vo.sub_level }</td>
+								<td>${vo.sub_credit }</td>
+								<td>${vo.sub_day }</td>
+								<td>${vo.sub_time }</td>
+								<td>${vo.sub_class }</td>
+								<td><a href="student?type=sub_insert&code=${vo.sub_code }&id=${list.st_id}&term=1">신청</a></td>
+							</tr>
+						</c:forEach>
+					</table>
 				</div>
-				
-				
-				
-				
-				
 				<div class="footer-sub">
 					<br> <img src="img/로고.png" alt="학교 로고사진" height=35px>
 					<span class="font">&nbsp; 아이티윌 대학교</span>

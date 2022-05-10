@@ -13,7 +13,10 @@ import com.mystudy.college.model.command.Command;
 import com.mystudy.college.model.command.ProSelectCommand;
 import com.mystudy.college.model.command.ProStuRegiSelectListCommand;
 import com.mystudy.college.model.command.ProUpdateCommand;
+import com.mystudy.college.model.command.RegInsert_Command;
+import com.mystudy.college.model.command.Reg_Find_Command;
 import com.mystudy.college.model.command.StuSelectCommand;
+import com.mystudy.college.model.command.Sub_findAllCommand;
 import com.mystudy.college.model.command.lectureSelectCommand;
 import com.mystudy.college.model.command.proRegiInsertOkCommand;
 import com.mystudy.college.model.command.proRegiUpdateOkCommand;
@@ -49,6 +52,12 @@ public class StudentControllerCommand extends HttpServlet {
 			command = new studentRegiSelectListCommand();
 		} else if ("stuSubjectList".equals(type)) { // 학생 수강과목 조회 요청 
 			command = new stuSubjectListCommand();
+		} else if ("sub_select".equals(type)) { // 학생 수강과목 조회 요청 
+			command = new Sub_findAllCommand();
+		} else if ("sub_insert".equals(type)) { // 학생 수강과목 조회 요청 
+			command = new RegInsert_Command();
+		} else if ("reg_find".equals(type)) { // 학생 수강과목 조회 요청 
+			command = new Reg_Find_Command();
 		}
 		
 		
