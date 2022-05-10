@@ -30,7 +30,6 @@ public class ProLoginCommand implements Command {
 		}
 		
 		ProfessorVO list = AuthorityDAO.prologin(pvo);
-		request.setAttribute("id", id);
 		request.setAttribute("list", list);
 		request.getSession().setAttribute("pvo", pvo);
 		return "main.jsp";	

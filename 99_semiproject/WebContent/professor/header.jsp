@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <header>
 	<div class="header_log">
-		<div class="log">교수</div>
+		<div class="log">교수 ${list.pro_name }</div>
 		<div class="logout">
 			<a href="index.jsp">로그아웃</a>		
 		</div>

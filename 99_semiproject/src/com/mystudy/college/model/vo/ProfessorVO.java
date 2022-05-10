@@ -13,9 +13,7 @@ public class ProfessorVO {
 	private String pro_addr; // 주소
 	private int ma_code; // 학과코드
 
-	public ProfessorVO() {
-		// TODO Auto-generated constructor stub
-	}
+	public ProfessorVO() {}
 
 	public ProfessorVO(int pro_id, String pro_pwd, String pro_name, String pro_ssn, String pro_position,
 			String pro_office, String pro_mobile, String pro_phone, String pro_email, String pro_addr, int ma_code) {

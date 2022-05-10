@@ -3,7 +3,7 @@ package com.mystudy.college.model.vo;
 public class AdminAccountVO {
 	private int ad_id; //관리자 아이디 
 	private String ad_pwd; //관리자 비밀번호
-	
+	public AdminAccountVO() {}
 	public int getAd_id() {
 		return ad_id;
 	}

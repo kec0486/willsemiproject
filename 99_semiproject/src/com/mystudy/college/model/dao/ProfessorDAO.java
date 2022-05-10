@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mystudy.college.model.vo.LecSubjectVO;
-import com.mystudy.college.model.vo.LectureVO;
 import com.mystudy.college.model.vo.ProfessorVO;
 import com.mystudy.college.model.vo.RegistrationVO;
 import com.mystudy.college.model.vo.StuRegiVO;
@@ -86,5 +85,32 @@ public class ProfessorDAO {
 		System.out.println(result);
 		return result;
 	}
+	// 교수 등록 수정 조회
+		public static int insert(ProfessorVO vo) {
+			SqlSession ss = DBService.getFactory().openSession();
+			int n = ss.insert("admin.proinsert",vo);
+			ss.commit();
+			ss.close();
+			return n;
+		}
+		public static int update(ProfessorVO vo) {
+			SqlSession ss = DBService.getFactory().openSession();
+			int n = ss.update("admin.proupdate",vo);
+			ss.commit();
+			ss.close();
+			return n;
+		}
+		public static List<ProfessorVO> selectAll() {
+			SqlSession ss = DBService.getFactory().openSession();
+			List<ProfessorVO> list = ss.selectList("admin.proselectAll");
+			ss.close();
+			return list;
+		}
+		public static ProfessorVO select(int id) {
+			SqlSession ss = DBService.getFactory().openSession();
+			ProfessorVO vo = ss.selectOne("admin.proselect",id);
+			ss.close();
+			return vo;
+		}
 
 }

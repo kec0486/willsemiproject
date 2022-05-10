@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,7 +77,40 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>교수정보조회</h1>
+				<table class="st_find" border>
+					<tr>
+						<th>교수아이디(id)</th>
+						<th>비밀번호</th>
+						<th>교수이름</th>
+						<th>주민등록번호</th>
+						<th>직위</th>
+						<th>연구실위치</th>
+						<th>휴대폰번호</th>
+						<th>집전화번호</th>
+						<th>이메일주소</th>
+						<th>집주소</th>
+						<th>학과코드</th>
+						<th>수정</th>
+					</tr>
+					<c:forEach var="vo" items="${list }">
+						<tr>
+							<td>${vo.pro_id }</td>
+							<td>${vo.pro_pwd }</td>
+							<td>${vo.pro_name }</td>
+							<td>${vo.pro_ssn }</td>
+							<td>${vo.pro_position }</td>
+							<td>${vo.pro_office }</td>
+							<td>${vo.pro_mobile }</td>
+							<td>${vo.pro_phone }</td>
+							<td>${vo.pro_email }</td>
+							<td>${vo.pro_addr }</td>
+							<td>${vo.ma_code }</td>
+							<td><a href="controller?type=pro_update&id=${vo.pro_id }">수정</a></td>
+	
+						</tr>
+					</c:forEach>
+				</table>
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -94,6 +128,10 @@
 	</div>
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
+	
+</body>
+</html>
+
 	
 </body>
 </html>

@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="admin">
+	<!-- 학생등록수정 -->
 	<insert id="stinsert" parameterType="com.mystudy.college.model.vo.StudentVO">
 		INSERT INTO STUDENT VALUES(STUDENT_SEQ.NEXTVAL,
 									#{ st_pwd },
@@ -15,7 +16,7 @@
 									#{ st_addr },
 									#{ ma_code })
 	</insert>
-	<update id="stupdate" parameterType="com.mystudy.college.model.vo.StudentVO">
+	<update id="stupdate" parameterType="StudentVO">
 		UPDATE STUDENT SET  st_pwd = #{ st_pwd },
 						    st_name = #{ st_name },
 							st_ssn = #{ st_ssn },
@@ -27,13 +28,75 @@
 							ma_code = #{ ma_code }
 				WHERE st_id = #{st_id}
 	</update>
-	<select id="stselectAll" resultType="com.mystudy.college.model.vo.StudentVO">
+	<select id="stselectAll" parameterType="StudentVO" resultType="StudentVO">
 		SELECT * FROM STUDENT ORDER BY ST_ID
 	</select>
-	<select id="stselect" resultType="com.mystudy.college.model.vo.StudentVO">
-		SELECT * FROM STUDENT ORDER BY ST_ID WHERE ST_ID = #{st_id}
+	
+	<select id="stselect" parameterType="StudentVO" resultType="StudentVO">
+		SELECT * FROM STUDENT WHERE ST_ID = #{st_id}
+	</select>
+	<!-- 교수등록수정 -->
+	<insert id="proinsert" parameterType="ProfessorVO">
+		INSERT INTO PROFESSOR VALUES(PROFESSOR_SEQ.NEXTVAL,
+									#{ pro_pwd },
+									#{ pro_name },
+									#{ pro_ssn },
+									#{ pro_position },
+									#{ pro_office },
+									#{ pro_mobile },
+									#{ pro_phone },
+									#{ pro_email },
+									#{ pro_addr },
+									#{ ma_code })
+	</insert>
+	<update id="proupdate" parameterType="ProfessorVO">
+		UPDATE PROFESSOR SET  pro_pwd = #{ pro_pwd },
+						    pro_name = #{ pro_name },
+							pro_ssn = #{ pro_ssn },
+							pro_position = #{ pro_position },
+							pro_office = #{ pro_office },
+							pro_mobile = #{ pro_mobile },
+							pro_phone = #{ pro_phone },
+							pro_email = #{ pro_email },
+							pro_addr = #{ pro_addr },
+							ma_code = #{ ma_code }
+				WHERE pro_id = #{pro_id}
+	</update>
+	<select id="proselectAll" parameterType="ProfessorVO" resultType="ProfessorVO">
+		SELECT * FROM PROFESSOR ORDER BY PRO_ID
 	</select>
 	
+	<select id="proselect" parameterType="ProfessorVO" resultType="ProfessorVO">
+		SELECT * FROM PROFESSOR WHERE pro_id = #{pro_id}
+	</select>
+	<!-- 수강과목 등록 수정 삭제 조회 -->
+	<insert id="subinsert" parameterType="SubjectVO">
+		INSERT INTO SUBJECT VALUES(SUBJECT_SEQ.NEXTVAL,
+									#{ sub_name },
+									#{ sub_level },
+									#{ sub_credit },
+									#{ sub_day },
+									#{ sub_time },
+									#{ sub_class })
+	</insert>
+	<update id="subupdate" parameterType="SubjectVO">
+		UPDATE SUBJECT SET  sub_name = #{ sub_name },
+							sub_level = #{ sub_level },
+							sub_credit = #{ sub_credit },
+							sub_day = #{ sub_day },
+							sub_time = #{ sub_time },
+							sub_class = #{ sub_class }
+				WHERE sub_code = #{sub_code}
+	</update>
+	<delete id="subdelete" parameterType="int">
+		DELETE FROM SUBJECT WHERE SUB_CODE = #{sub_code}
+	</delete>
+	<select id="subselectAll" parameterType="SubjectVO" resultType="SubjectVO">
+		SELECT * FROM SUBJECT ORDER BY SUB_CODE
+	</select>
+	<select id="subselect" parameterType="SubjectVO" resultType="SubjectVO">
+		SELECT * FROM SUBJECT WHERE sub_code = #{sub_code}
+	</select>
 </mapper>
 
 

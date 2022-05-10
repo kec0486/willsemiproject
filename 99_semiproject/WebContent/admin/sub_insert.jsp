@@ -76,7 +76,20 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>수강과목신규등록</h1>
+				<hr>
+				<form action="controller?type=sub_insert" method="post">
+					과목명 <input type="text" name="name"><br>
+					학년 
+						1<input type="radio" name="level" value="1">
+						2<input type="radio" name="level" value="2">
+						3<input type="radio" name="level" value="3"><br>
+					학점 <input type="text" name="credit"><br>
+					강의요일 <input type="text" name="day"><br>
+					강의시간 <input type="text" name="time"><br>
+					강의실 <input type="text" name="class"><br>
+					<input type="submit" value="등록"	><input type="reset" value="리셋"	>
+				</form>
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>

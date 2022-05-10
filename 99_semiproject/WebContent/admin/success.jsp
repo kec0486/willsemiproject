@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,36 +16,58 @@
 		});
 
 		$('.ul-toggle').click(function() {
-			$('.ul-toggle-inner').show();
+			if($('.ul-toggle-inner').css("display") == "none"){
+			    $('.ul-toggle-inner').show();
+			} else {
+			    $('.ul-toggle-inner').hide();
+			}
 		});
 	});
-	
 </script>
 </head>
 <body>
 
 	<!-- header -->
 	<jsp:include page="header.jsp"></jsp:include>
-
+	
 	<!-- content -->
 	<div class="container study-manage">
 		<!-- aside -->
 		<aside>
 			<div class="aside">
-				<h2>교수</h2>
+				<h2>관리자</h2>
 				<div class="aside-menu">
-					<h3>개인정보관리</h3>
+					<h3>학생/교수 정보관리</h3>
 					<ul>
-						<li><a href="controller?type=pro_select?">개인정보 조회/수정</a></li>
-					</ul>
-					<h3>강의정보</h3>
-					<ul>
-						<li class="ul-toggle">학생 정보 조회
+						<li class="ul-toggle">학생 정보 입력/조회
 							<ul class="ul-toggle-inner">
-								<li><a href="#">등록금 정보입력</a></li>
-								<li><a href="#">등록금 정보수정</a></li>
+								<li><a href="st_insert.jsp">학생정보등록</a></li>
+								<li><a href="controller?type=st_find">학생정보조회</a></li>
 							</ul>
 						</li>
+						<li class="ul-toggle">교수 정보 입력/조회
+							<ul class="ul-toggle-inner">
+								<li><a href="pro_insert.jsp">교수정보등록</a></li>
+								<li><a href="controller?type=pro_find">교수정보조회</a></li>
+							</ul>
+						</li>
+					</ul>
+					<h3>수강정보관리</h3>
+					<ul>
+						<li><a href="sub_insert.jsp">수강과목등록</a></li>
+						<li><a href="controller?type=sub_find">수강과목조회</a></li>
+					</ul>
+					<h3>등록금정보관리</h3>
+					<ul>
+						<li><a href="admin?tuition=insert">등록금 정보입력</a></li>
+						<li><a href="admin?tuition=update">등록금 정보수정</a></li>
+						<li><a href="admin?tuition=select">등록금 정보 조회</a></li>
+					</ul>
+					<h3>공지사항등록</h3>
+					<ul>
+						<li><a href="board?tuition=insert">등록금 정보입력</a></li>
+						<li><a href="board?tuition=update">등록금 정보수정</a></li>
+						<li><a href="board?tuition=select">등록금 정보 조회</a></li>
 					</ul>
 				</div>
 			</div>
@@ -54,7 +76,7 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					요청정보 완료~~!
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -72,6 +94,6 @@
 	</div>
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
-
+	
 </body>
 </html>

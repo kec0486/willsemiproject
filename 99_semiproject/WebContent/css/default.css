@@ -353,10 +353,12 @@ h2{
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
-=======
+}
 .admin_page,
 .student_page,
 .professor_page{
 	text-align: right;
->>>>>>> branch 'master' of https://github.com/kec0486/willsemiproject.git
+}
+.st_find {
+	border-collapse: collapse;
 }

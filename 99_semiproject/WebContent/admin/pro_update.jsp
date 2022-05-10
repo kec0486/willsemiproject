@@ -76,7 +76,22 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>학생정보수정</h1>
+				<hr>
+				<form action="controller?type=pro_update_ok" method="post">
+					아이디 <input type="text" name="id" value="${list.pro_id }" readonly="readonly"><br>
+					비밀번호 <input type="text" name="pwd" value="${list.pro_pwd }"><br>
+					학생이름 <input type="text" name="name" value="${list.pro_name }"><br>
+					주민등록번호 <input type="text" name="ssn" value="${list.pro_ssn }"><br>
+					직위 <input type="text" name="position" value="${list.pro_position }"><br>
+					연구실위치 <input type="text" name="office" value="${list.pro_office }"><br>
+					휴대폰번호 <input type="text" name="mobile" value="${list.pro_mobile }"><br>
+					집전화번호 <input type="text" name="phone" value="${list.pro_phone }"><br>
+					이메일주소 <input type="email" name="email" value="${list.pro_email }"><br>
+					집주소 <input type="text" name="addr" value="${list.pro_addr }"><br>
+					학과코드 <input type="text" name="code" value="${list.ma_code }"><br>
+					<input type="submit" value="수정"	><input type="reset" value="리셋"	>
+				</form>
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -94,6 +109,10 @@
 	</div>
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
+	
+</body>
+</html>
+
 	
 </body>
 </html>

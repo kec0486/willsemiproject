@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,7 +77,38 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>학생정보조회</h1>
+				<table class="st_find" border>
+					<tr>
+						<th>학번(id)</th>
+						<th>비밀번호</th>
+						<th>학생이름</th>
+						<th>주민등록번호</th>
+						<th>학년</th>
+						<th>휴대폰번호</th>
+						<th>집전화번호</th>
+						<th>이메일주소</th>
+						<th>집주소</th>
+						<th>학과코드</th>
+						<th>수정</th>
+					</tr>
+					<c:forEach var="vo" items="${list }">
+						<tr>
+							<td>${vo.st_id }</td>
+							<td>${vo.st_pwd }</td>
+							<td>${vo.st_name }</td>
+							<td>${vo.st_ssn }</td>
+							<td>${vo.st_level }</td>
+							<td>${vo.st_mobile }</td>
+							<td>${vo.st_phone }</td>
+							<td>${vo.st_email }</td>
+							<td>${vo.st_addr }</td>
+							<td>${vo.ma_code }</td>
+							<td><a href="controller?type=st_update&id=${vo.st_id }">수정</a></td>
+	
+						</tr>
+					</c:forEach>
+				</table>
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -94,6 +126,10 @@
 	</div>
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
+	
+</body>
+</html>
+
 	
 </body>
 </html>

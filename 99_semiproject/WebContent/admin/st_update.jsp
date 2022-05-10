@@ -76,7 +76,21 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>학생정보수정</h1>
+				<hr>
+				<form action="controller?type=st_update_ok" method="post">
+					아이디 <input type="text" name="id" value="${list.st_id }" readonly="readonly"><br>
+					비밀번호 <input type="text" name="pwd" value="${list.st_pwd }"><br>
+					학생이름 <input type="text" name="name" value="${list.st_name }"><br>
+					주민등록번호 <input type="text" name="ssn" value="${list.st_ssn }"><br>
+					학년 <input type="text" name="level" value="${list.st_level }"><br>
+					휴대폰번호 <input type="text" name="mobile" value="${list.st_mobile }"><br>
+					집전화번호 <input type="text" name="phone" value="${list.st_phone }"><br>
+					이메일주소 <input type="email" name="email" value="${list.st_email }"><br>
+					집주소 <input type="text" name="addr" value="${list.st_addr }"><br>
+					학과코드 <input type="text" name="code" value="${list.ma_code }"><br>
+					<input type="submit" value="수정"	><input type="reset" value="리셋"	>
+				</form>
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -94,6 +108,10 @@
 	</div>
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
+	
+</body>
+</html>
+
 	
 </body>
 </html>

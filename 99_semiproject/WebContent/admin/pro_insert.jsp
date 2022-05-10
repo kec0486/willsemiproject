@@ -76,7 +76,21 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>교수정보신규등록</h1>
+				<hr>
+				<form action="/admin/controller?type=pro_insert" method="post">
+					비밀번호 <input type="text" name="pwd"><br>
+					교수이름 <input type="text" name="name"><br>
+					주민등록번호 <input type="text" name="ssn"><br>
+					직위 <input type="text" name="position"><br>
+					연구실위치 <input type="text" name="office"><br>
+					휴대폰번호 <input type="text" name="mobile"><br>
+					집전화번호 <input type="text" name="phone"><br>
+					이메일주소 <input type="email" name="email"><br>
+					집주소 <input type="text" name="addr"><br>
+					학과코드 <input type="text" name="code"><br>
+					<input type="submit" value="등록"	><input type="reset" value="리셋"	>
+				</form>
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -94,6 +108,10 @@
 	</div>
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
+	
+</body>
+</html>
+
 	
 </body>
 </html>

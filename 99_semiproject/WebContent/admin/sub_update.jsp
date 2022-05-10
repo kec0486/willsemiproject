@@ -76,7 +76,18 @@
 		<section>
 			<div class="section">
 				<div class="container">
-					<!-- <h1>container</h1> -->
+					<h1>학생정보수정</h1>
+				<hr>
+				<form action="controller?type=sub_update_ok" method="post">
+					과목코드 <input type="text" name="code" value="${list.sub_code }" readonly="readonly"><br>
+					과목명 <input type="text" name="name" value="${list.sub_name }"><br>
+					학년  <input type="text" name="level" value="${list.sub_level }"><br>
+					학점 <input type="text" name="credit" value="${list.sub_credit }"><br>
+					강의요일 <input type="text" name="day" value="${list.sub_day }"><br>
+					강의시간 <input type="text" name="time" value="${list.sub_time }"><br>
+					강의실 <input type="text" name="class" value="${list.sub_class }"><br>
+					<input type="submit" value="수정"	><input type="reset" value="리셋"	>
+				</form>
 				</div>
 				<div class="footer-sub">
 					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
@@ -94,6 +105,10 @@
 	</div>
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
+	
+</body>
+</html>
+
 	
 </body>
 </html>
