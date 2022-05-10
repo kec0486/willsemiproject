@@ -40,7 +40,7 @@ public class proUpdateListCommand implements Command {
 		
 //		
 //		// 3. prosessorUpdateList.jsp 페이지로 위임(전달) 처리
-		return "professorUpdateList.jsp";
+		return "professorUpdate.jsp";
 	}
 
 }

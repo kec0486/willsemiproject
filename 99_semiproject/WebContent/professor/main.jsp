@@ -19,6 +19,30 @@
 			$('.ul-toggle-inner').show();
 		});
 	});
+	
+	function check_go(pro_id) {
+		alert("check_go(st_id) 정상작동"); 
+		//컨트롤러로 이동
+		location.href = "controller?type=professorSelectList&pro_id=" + pro_id;
+	}
+	
+	function update_go(pro_id) {
+		alert("update_go(st_id) 정상작동");
+		location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
+		
+	}
+	
+	function check_prolec(pro_id){
+		alert("update_go(st_id) 정상작동");
+		location.href = "controller?type=prolectureSelectList&pro_id=" + pro_id;
+		
+	}
+	function check_proup(pro_id){
+		alert("check_proup(pro_id) 정상작동");
+		location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
+		
+	}
+	
 </script>
 </head>
 <body>
@@ -35,14 +59,14 @@
 				<div class="aside-menu">
 					<h3>개인정보관리</h3>
 					<ul>
-						<li><a href="controller?type=professorSelectList?id=${id }">개인정보 조회</a></li>
-						<li><a href="professorUpdate.jsp">개인정보 수정</a></li>
+						<li><a href="javascript:void(0);" onclick="check_go(${list.pro_id });">개인정보 조회</a></li>
+						<li><a href="javascript:void(0);" onclick="check_proup(${list.pro_id })">개인정보 수정</a></li>
 					</ul>
 					<h3>강의정보</h3>
 					<ul>
 						<li class="ul-toggle">강의 관리
 							<ul class="ul-toggle-inner">
-								<li><a href="controller?type=prolectureSelectList"> 강의 정보 조회 </a></li>
+								<li><a href="javascript:void(0);" onclick="check_prolec(${list.pro_id })"> 강의 정보 조회 </a></li>
 								<li><a href="proStuRegi.jsp"> 학생 성적 입력 </a></li>
 								<li><a href="proRegiUpdate.jsp"> 학생 성적 수정  </a></li>
 							</ul>
@@ -58,20 +82,7 @@
 					
 					
 				</div>
-				<div class="footer-sub">
-					<br> <img src="../img/로고.png" alt="학교 로고사진" height=35px>
-					<span class="font">&nbsp; 아이티윌 대학교</span>
-					<p>
-						<span> 서울특별시 강남구 테헤란로 124 4층 (역삼동, 삼원타워) &nbsp;|&nbsp; TEL
-							: 02-6255-8002 &nbsp;|&nbsp; FAX : 02-569-8069 </span><br> <span>
-							copyright ⓒ 2021 WILL UNIVERSITY All Rights Reserved.</span> <br> <br>
-						<br>
-					</p>
-				</div>
-
-			</div>
-		</section>
-	</div>
+				
 	<!-- footer -->
 	<jsp:include page="footer.jsp"></jsp:include>
 

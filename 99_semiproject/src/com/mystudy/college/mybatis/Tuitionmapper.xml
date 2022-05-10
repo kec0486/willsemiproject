@@ -2,19 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="tuition">
+<mapper namespace="major">
 
-	<select id="check" resultType="com.mystudy.college.model.vo.TuitionVO">
+	<select id="selectOne" resultType="com.mystudy.college.model.vo.MajorVO">
 		SELECT * 
-		FROM TUITION 
+		FROM MAJOR 
 		WHERE MA_CODE = (SELECT MA_CODE FROM STUDENT 
                   		 WHERE ST_ID = #{st_id})
 	</select>
 </mapper>
-
-
-
-
-
-
-

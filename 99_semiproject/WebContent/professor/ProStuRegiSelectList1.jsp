@@ -21,6 +21,11 @@
 			$('.ul-toggle-inner').show();
 		});
 	});
+	
+	function insert_go(st_id, sub_code) {
+		alert("insert_go(st_id) 정상작동");
+		location.href = "controller?type=proRegiInsert&st_id=" + st_id,", sub_code="+sub_code;
+	}
 </script>
 </head>
 <body>
@@ -72,9 +77,9 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="vo" items="${list }">
+							<c:forEach var="vo" items="${srvo }" >
 								<tr>
-									<td><a href="proRegiInsert?st_id= ${vo.st_id}">${vo.st_id}</a></td>
+									<td><a href="javascript:void(0);" onclick="insert_go(${vo.st_id },${vo.sub_code });">${vo.st_id }</a></td>
 									<td>${vo.st_name}</td>
 									<td>${vo.st_level}</td>
 									<td>${vo.st_mobile}</td>
@@ -82,18 +87,11 @@
 									<td>${vo.ma_code}</td>
 									<td>${vo.re_score}</td>
 									<td>${vo.re_grade}</td>
-								</tr> 
+								</tr>
 							</c:forEach>
 						</tbody>
-
-						<button type="button" onclick="location.href='proRegiInsert.jsp'">학생성적
-							입력</button>
-
-						<button type="button" onclick="location.href='proRegiUpdate.jsp'">학생성적
-							수정</button>
+					</table>
 				</div>
-				
-
 			</div>
 		</section>
 	</div>
@@ -102,6 +100,5 @@
 
 	<%-- <!-- footer -->
 	<jsp:include page="footer.jsp" ></jsp:include> --%>
-
 </body>
 </html>

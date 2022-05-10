@@ -69,7 +69,7 @@
                   </tr>
                </thead>
                <tbody>
-                  <c:forEach var="vo" items="${list }">
+                  <c:forEach var="vo" items="${lsvo }">
                      <tr>
                         <td><a href="#" >${vo.sub_code }</a></td>
                         <td>${vo.sub_name }</td>

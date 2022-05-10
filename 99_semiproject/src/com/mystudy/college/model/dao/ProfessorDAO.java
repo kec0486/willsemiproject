@@ -14,9 +14,9 @@ import com.mystudy.college.mybatis.DBService;
 public class ProfessorDAO {
 
 	// 교수 아이디로 받아서 개인정보 조회
-	public static List<ProfessorVO> selectId(int selectId) {
+	public static ProfessorVO selectId(int selectId) {
 		SqlSession ss = DBService.getFactory().openSession();
-		List<ProfessorVO> list = ss.selectList("college.professorSelect", selectId);
+		ProfessorVO list = ss.selectOne("college.professorSelect", selectId);
 		System.out.println(list);
 		ss.close();
 		return list;

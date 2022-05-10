@@ -22,11 +22,7 @@
 	});
 </script>
 <style>
-.styled-table {
-	display: flex;
-	justify-content: center;
-	/*align-items: center;*/
-}
+
 </style>
 </head>
 <body>
@@ -68,7 +64,7 @@
 					<h1>개인정보 조회</h1>
 					
 					<table class="styled-table">
-						<thead>
+						<thead style="text-align: center;">
 							<tr>
 								<th>아이디</th>
 								<th>비번</th>
@@ -83,21 +79,19 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="vo" items="${list }">
 								<tr>
-									<td>${vo.pro_id }</td>
-									<td>${vo.pro_pwd }</td>
-									<td>${vo.pro_name }</td>
-									<td>${vo.pro_position }</td>
-									<td>${vo.pro_office }</td>
-									<td>${vo.pro_mobile }</td>
-									<td>${vo.pro_phone }</td>
-									<td>${vo.pro_addr }</td>
-									<td>${vo.pro_email }</td>
-									<td>${vo.pro_ssn }</td>
-
+									<td>${pvo.pro_id }</td>
+									<td>${pvo.pro_pwd }</td>
+									<td>${pvo.pro_name }</td>
+									<td>${pvo.pro_position }</td>
+									<td>${pvo.pro_office }</td>
+									<td>${pvo.pro_mobile }</td>
+									<td>${pvo.pro_phone }</td>
+									<td>${pvo.pro_addr }</td>
+									<td>${pvo.pro_email }</td>
+									<td>${pvo.pro_ssn }</td>
 								</tr>
-							</c:forEach>
+							
 						</tbody>
 					</table>
 				</div>

@@ -57,50 +57,61 @@
 				<div class="container">
 					<h1>container</h1>
 					<h1>교수 개인정보 수정</h1>
-					<form action="professor?type=professorUpdateList" method="post">
+					<caption>아이디, 주민등록번호, 학사코드는 수정이 불가능합니다.</caption>
+
+					<form action="controller?type=professorUpdateList&pro_id" method="post">
 						<table class="styled-table">
 
 							<tbody>
 								<tr>
 									<th>아이디</th>
-									<td><input type="text" name="id" value="${list.pro_id } vodffd" readonly="readonly"></td>
+									<td><input type="text" name="id" value="${pvo.pro_id }"
+										readonly="readonly"></td>
 									<th>비밀번호</th>
-									<td><input type="text" name="pwd"></td>
+									<td><input type="text" name="pwd" value="${pvo.pro_pwd}"></td>
 									<th>주민등록번호</th>
-									<td><input type="text" name="ssn"
-										value="" readonly="readonly"></td>
+									<td><input type="text" name="ssn" value="${pvo.pro_ssn}"
+										readonly="readonly"></td>
 								</tr>
 
 								<tr>
 									<th>직책</th>
-									<td><input type="text" name="position"></td>
+									<td><input type="text" name="position"
+										value="${pvo.pro_position}"></td>
 									<th>연구실</th>
-									<td><input type="text" name="office"></td>
+									<td><input type="text" name="office"
+										value="${pvo.pro_office}"></td>
 									<th>학사코드</th>
-									<td><input type="text" name="maCode" readonly="readonly"></td>
+									<td><input type="text" name="maCode"
+										value="${pvo.ma_code }" readonly="readonly"></td>
 								</tr>
 								<tr>
 
 									<th>전화번호</th>
-									<td><input type="text" name="mobile"></td>
+									<td><input type="text" name="mobile"
+										value="${pvo.pro_phone}"></td>
 									<th>핸드폰</th>
-									<td><input type="text" name="phone"></td>
+									<td><input type="text" name="phone"
+										value="${pvo.pro_mobile}"></td>
 								</tr>
 								<tr>
 									<th>이메일</th>
-									<td><input type="text" name="email"></td>
+									<td><input type="text" name="email"
+										value="${pvo.pro_email}"></td>
 									<th>주소</th>
-									<td colspan="5"><input type="text" name="addr"></td>
+									<td colspan="5"><input type="text" name="addr"
+										value="${pvo.pro_addr}"></td>
 
 								</tr>
 
 							</tbody>
 						</table>
+						<input type="submit" value="개인정보 수정하기"> 
 					</form>
 
 
 				</div>
-			
+
 
 			</div>
 		</section>

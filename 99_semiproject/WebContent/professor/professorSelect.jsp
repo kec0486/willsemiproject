@@ -65,7 +65,7 @@
 			<div class="section">
 				<div class="container">
 					<h1>교수 개인정보 조회</h1>
-					<a href="javascript:void(0);" onclick="check_go(${pvo.pro_id});">  교수 개인정보 조회</a>
+					<a href="javascript:void(0);" onclick="check_go(${list.pro_id});">  교수 개인정보 조회</a>
 					<!--  <form action="controller?type=professorSelectList" method="post">
 						교수 아이디 입력 : <input type="text" name="id" value="${pvo.pro_id}"> 
 						<input type="submit" value="아이디로 검색"> 

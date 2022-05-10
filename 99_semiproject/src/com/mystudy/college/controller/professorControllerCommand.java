@@ -15,11 +15,14 @@ import com.mystudy.college.model.command.ProSelectCommand;
 import com.mystudy.college.model.command.ProStuRegiSelectListCommand;
 import com.mystudy.college.model.command.ProUpdateCommand;
 import com.mystudy.college.model.command.lectureSelectCommand;
+import com.mystudy.college.model.command.proRegiInsertCommand;
 import com.mystudy.college.model.command.proRegiInsertOkCommand;
 import com.mystudy.college.model.command.proRegiUpdateOkCommand;
 import com.mystudy.college.model.command.proUpdateListCommand;
 import com.mystudy.college.model.command.professorSelectListCommand;
 import com.mystudy.college.model.command.prolectureSelectListCommand;
+import com.mystudy.college.model.dao.ProfessorDAO;
+import com.mystudy.college.model.vo.ProfessorVO;
 
 @WebServlet("/professor/controller")
 public class professorControllerCommand extends HttpServlet {
@@ -36,20 +39,18 @@ public class professorControllerCommand extends HttpServlet {
 		
 		if ("professor".equals(login)) { // 교수 
 			command = new ProLoginCommand();
-		} else if ("list".equals(type)) { // 교수 개인 정보 조회
-			command = new ProSelectCommand();
-		} else if ("professorSelectList".equals(type)) { //조회결과 
+		} 	else if ("professorSelectList".equals(type)) { //조회결과 
 			command = new professorSelectListCommand();
 		} else if ("professorUpdate".equals(type)) { //교수 개인정보 수정 요청 
 			command = new ProUpdateCommand();
 		} else if ("professorUpdateList".equals(type)) { //교수 개인정보 수정 확인 요청
 			command = new proUpdateListCommand();
-		} else if ("prolectureSelect".equals(type)) { //교수 강의 목록 확인 요청
-			command = new lectureSelectCommand();
 		} else if ("prolectureSelectList".equals(type)) { //교수 강의 목록 조회
 			command = new prolectureSelectListCommand();
 		} else if ("ProStuRegiSelectList".equals(type)) { //교수 강의과목 성적 리스트 조회
 			command = new ProStuRegiSelectListCommand();
+		} else if ("proRegiInsert".equals(type)) { //교수 강의과목 학생정보 입력
+			command = new proRegiInsertCommand();
 		} else if ("proRegiInsert_ok".equals(type)) { //교수 강의과목 학생정보 입력
 			command = new proRegiInsertOkCommand();
 		} else if ("proRegiUpdate_ok".equals(type)) { //교수 강의과목 학생정보 수정
@@ -60,6 +61,7 @@ public class professorControllerCommand extends HttpServlet {
 		
 		
 		String path = command.exec(request, response);
+		System.out.println(path);
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 

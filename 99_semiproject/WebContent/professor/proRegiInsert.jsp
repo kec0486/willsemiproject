@@ -55,11 +55,11 @@
 			<div class="section">
 				<div class="container">
 					<h1>학생성적 입력</h1>
+							${srvo }
 					<table class="styled-table">
-
 						<form action="controller" method="post">
 							과목 : <input type="text" name="sub_code"> 
-							학생 이름 : <input type="text" name="st_name"> 
+							학번 : <input type="text" name="st_id"> 
 							점수 : <input type="text" name="re_score"> 
 							성적 : <input type="text" name="re_grade">
 							<input type="submit" value="성적입력"> 

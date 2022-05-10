@@ -56,7 +56,7 @@
 				<div class="container">
 					<h1>학생 성적 관리 페이지</h1>
 					<h1>proStuRegi.jsp</h1>
-
+					${lsvo.sub_code }
 					<form action="controller" method="post">
 						과목코드 입력 : <input type="text" name="sub_code"> <input
 							type="submit" value="과목코드로 검색"> <input type="hidden"
