@@ -4,12 +4,33 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tuition">
 
+	<!-- 학생 본인 등록금 조회 -->
 	<select id="check" resultType="com.mystudy.college.model.vo.TuitionVO">
 		SELECT * 
 		FROM TUITION 
 		WHERE MA_CODE = (SELECT MA_CODE FROM STUDENT 
                   		 WHERE ST_ID = #{st_id})
 	</select>
+	
+	<!-- 관리자 학생 등록금 전체 조회 -->
+	<select id="selectAll" resultType="map">
+		SELECT S.ST_ID, S.ST_NAME, M.MA_COLLEGE, M.MA_NAME, S.ST_LEVEL, T.TU_TUITION, T.TU_STATE
+		FROM STUDENT S, MAJOR M, TUITION T
+		WHERE S.MA_CODE = M.MA_CODE
+		AND M.MA_CODE = T.MA_CODE	
+		ORDER BY S.ST_ID
+	</select>
+	
+	<!-- 관리자 특정 학생(st_id) 등록금  조회 -->
+	<select id="selectOne" parameterType="int"
+	resultType="com.mystudy.college.model.vo.TuitionVO">
+		SELECT T.MA_CODE, T.TU_TUITION AS TU_TUTION, T.TU_STATE
+		FROM STUDENT S, MAJOR M, TUITION T
+		WHERE S.MA_CODE = M.MA_CODE
+		AND M.MA_CODE = T.MA_CODE
+		AND S.ST_ID = #{st_id}
+	</select>
+	
 </mapper>
 
 

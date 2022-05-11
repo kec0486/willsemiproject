@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mystudy.college.model.command.Command;
 import com.mystudy.college.model.command.TuitionCheckCommand;
+import com.mystudy.college.model.command.TuitionInsertCommand;
+import com.mystudy.college.model.command.TuitionSelectListCommand;
+import com.mystudy.college.model.command.TuitionUpdateCommand;
 
 @WebServlet("/tuition")
 public class TuitionControllerCommand extends HttpServlet {
@@ -22,8 +25,14 @@ public class TuitionControllerCommand extends HttpServlet {
 		
 		Command command = null;
 		
-		if ("tuitionCheck".equals(type)) {
+		if ("tuitionCheck".equals(type)) { //학생로그인 후 등록금조회
 			command = new TuitionCheckCommand();
+		} else if ("tuitioninsert".equals(type)) { //관리자로그인 후 등록금입력
+			command = new TuitionInsertCommand();
+		} else if ("tuitionupdate".equals(type)) { //관리자로그인 후 등록금수정
+			command = new TuitionUpdateCommand();
+		} else if ("tuitionSelectList".equals(type)) { //관리자로그인 후 전체 학생 등록금조회
+			command = new TuitionSelectListCommand();
 		}
 			
 		String path = command.exec(request, response);

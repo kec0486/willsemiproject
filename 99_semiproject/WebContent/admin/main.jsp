@@ -59,15 +59,15 @@
 					</ul>
 					<h3>등록금정보관리</h3>
 					<ul>
-						<li><a href="admin?tuition=insert">등록금 정보입력</a></li>
-						<li><a href="admin?tuition=update">등록금 정보수정</a></li>
-						<li><a href="admin?tuition=select">등록금 정보 조회</a></li>
+						<li><a href="tuitioninsert.jsp">등록금 정보입력</a></li>
+						<li><a href="tuitionupdate.jsp">등록금 정보수정</a></li>
+						<li><a href="tuitionselectList.jsp">등록금 정보 조회</a></li>
 					</ul>
 					<h3>공지사항등록</h3>
 					<ul>
-						<li><a href="board?tuition=insert">등록금 정보입력</a></li>
-						<li><a href="board?tuition=update">등록금 정보수정</a></li>
-						<li><a href="board?tuition=select">등록금 정보 조회</a></li>
+						<li><a href="board?tuition=insert">공지사항입력</a></li>
+						<li><a href="board?tuition=update">공지사항수정</a></li>
+						<li><a href="board?tuition=select">공지사항조회</a></li>
 					</ul>
 				</div>
 			</div>
