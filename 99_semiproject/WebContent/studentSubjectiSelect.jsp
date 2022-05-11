@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 학생 개인정보 조회 페이지 </title>
+<title> 학생 수강정보 조회 페이지 </title>
 </head>
 <body>
 	<h1>학생 수강정보 조회 </h1>

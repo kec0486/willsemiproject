@@ -32,14 +32,15 @@ public class proUpdateListCommand implements Command {
 		
 		System.out.println(pvo); // 값이 잘 들어오는지 확인 
 		// 1. DB데이터 조회하고 가져오기
-		int list =  ProfessorDAO.proUpdate(pvo);
+		int cnt =  ProfessorDAO.proUpdate(pvo);
 		
-		System.out.println(list);
+		System.out.println(cnt);
 //		// 2. DB데이터 request scope 에 저장
-		request.setAttribute("list", list);
+		request.setAttribute("cnt", cnt);
+		
 //		
 //		// 3. prosessorUpdateList.jsp 페이지로 위임(전달) 처리
-		return "professorUpdateList.jsp";
+		return "professorUpdate.jsp";
 	}
 
 }

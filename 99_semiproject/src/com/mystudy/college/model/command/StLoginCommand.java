@@ -27,8 +27,9 @@ public class StLoginCommand implements Command {
 		StudentVO vo = new StudentVO();
 		vo.setSt_id(Integer.parseInt(id));
 		vo.setSt_pwd(pwd);
-		
+		String errMsg = "아이디 또는 비밀번호가 맞지 않습니다.";
 		if(AuthorityDAO.stlogin(vo) == null) {
+			request.setAttribute("errMsg", errMsg);
 			return "index.jsp";
 		}
 		StudentVO list = AuthorityDAO.stlogin(vo);

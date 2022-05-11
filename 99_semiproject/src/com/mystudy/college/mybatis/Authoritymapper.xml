@@ -20,7 +20,10 @@
 	<select id="stsearchid" parameterType="StudentVO" resultType="StudentVO">
 		SELECT * FROM STUDENT WHERE ST_NAME = #{st_name} AND ST_EMAIL = #{st_email}
 	</select>
-
+	<select id="stsearchpwd" parameterType="StudentVO" resultType="StudentVO">
+		SELECT * FROM STUDENT WHERE ST_ID = #{st_id} AND ST_NAME = #{st_name} AND ST_EMAIL = #{st_email}
+	</select>
+	
 	<select id="prosearchid" parameterType="ProfessorVO" resultType="ProfessorVO">
 		SELECT * FROM PROFESSOR WHERE PRO_ID = #{pro_id}
 	</select>

@@ -1,26 +1,111 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>proStuRegi.jsp</title>
+<title>아이티윌대학교 포털</title>
+<link href="../css/default.css" rel="stylesheet">
+<link href="../js/default.js" rel="javascript">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+	$(function() {
+		$('h3').click(function() {
+			$('.aside-menu ul').hide();
+			$(this).next().show();
+		});
+
+		$('.ul-toggle').click(function() {
+			$('.ul-toggle-inner').show();
+		});
+	});
+	function prosturegi_go(sub_code) {
+	      //alert("prosturegi_go(sub_code 정상작동"); 
+	      //윈도우 팝업창으로 게시물 띄우기
+	      //window.open("tuition?type=tuitionCheck&st_id=" + st_id,"등록금조회", "_blank").resizeTo(400,500);
+			location.href = "controller?type=ProStuRegiSelectList&sub_code=" + sub_code;
+	   }
+	function check_go(pro_id) {
+	      //alert("check_go(st_id) 정상작동"); 
+	      //컨트롤러로 이동
+	      location.href = "controller?type=professorSelectList&pro_id=" + pro_id;
+	   }
+	   
+	   function update_go(pro_id) {
+	      //alert("update_go(st_id) 정상작동");
+	      location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
+	      
+	   }
+	   
+	   function check_prolec(pro_id){
+	      //alert("update_go(st_id) 정상작동");
+	      location.href = "controller?type=prolectureSelectList&pro_id=" + pro_id;
+	      
+	   }
+	   function check_proup(pro_id){
+	     // alert("check_proup(pro_id) 정상작동");
+	      location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
+	      
+	   }
+	
+</script>
 </head>
 <body>
-	<h1>학생 성적 관리 페이지</h1>
-	<h1>proStuRegi.jsp</h1>
-	
-	<form action="professor" method="post">
-		과목코드  입력  : <input type="text" name="sub_code">
-		<input type="submit" value="과목코드로 검색">
-		<input type="hidden" name="type" value="ProStuRegiSelectList">
-	</form>
-	
-	<h2>성적 입력 </h2>
-	<button onclick="pro_stu_score_insert()"> 학생성적 입력 </button>
-	<h2>성적 수정  </h2>
-	<button onclick="pro_stu_score_update()"> 학생 성적 수정 </button>
+
+	<!-- header -->
+	<jsp:include page="header.jsp"></jsp:include>
+
+	<!-- content -->
+	<div class="container study-manage">
+		<!-- aside -->
+		<aside>
+			<div class="aside">
+				<h2>교수</h2>
+				<div class="aside-menu">
+					<h3>개인정보관리</h3>
+					<ul>
+						<li><a href="javascript:void(0);"
+							onclick="check_go(${list.pro_id });">개인정보 조회</a></li>
+						<li><a href="javascript:void(0);"
+							onclick="check_proup(${list.pro_id })">개인정보 수정</a></li>
+					</ul>
+					<h3>강의정보</h3>
+					<ul>
+						<li class="ul-toggle">강의 관리
+							<ul class="ul-toggle-inner">
+								<li><a href="javascript:void(0);"
+									onclick="check_prolec(${list.pro_id })"> 강의 정보 조회 </a></li>
+								<li><a href="proStuRegi.jsp"> 학생 성적 입력 </a></li>
+								<li><a href="proRegiUpdate.jsp"> 학생 성적 수정 </a></li>
+							</ul>
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<!-- section -->
+		<section>
+			<div class="section">
+				<div class="container">
+					<h1>학생 성적 관리 페이지</h1>
+					<h1>proStuRegi.jsp</h1>
+
+
+					<a href="javascript:void(0);"
+						onclick="prosturegi_go(${lsvo.sub_code});"> 교수 과목코드 입력</a>
+
+
+
+				</div>
+
+
+			</div>
+		</section>
+	</div>
+	<!-- footer -->
+	<jsp:include page="footer.jsp"></jsp:include>
+
+	<%-- <!-- footer -->
+	<jsp:include page="footer.jsp" ></jsp:include> --%>
+
 </body>
 </html>

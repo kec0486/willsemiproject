@@ -20,6 +20,7 @@
 		document.getElementById(cityName).style.display = "block";
 	}
 	
+<<<<<<< HEAD
 	//게시물조회 컨트롤러로 가기
 	function noticeboardView(n_num, n_title) {
 		
@@ -58,6 +59,8 @@
 			}
 		});	
 	} */
+=======
+>>>>>>> branch 'master' of https://github.com/kec0486/willsemiproject.git
 </script>
 <div class="content">
 	<div class="content_header">
@@ -70,11 +73,15 @@
 				<form action="controller?login=professor" method="post">
 					<!-- controller?type=login -->
 					<h2 class="login-title">교수용로그인</h2>
-					<input type="text" name="id" class="login_input" placeholder="관리자아이디">
-					<input type="password" name="pwd" class="login_input" placeholder="관리자비밀번호"> 
+					<input type="text" name="id" class="login_input" placeholder="교수용아이디">
+					<input type="password" name="pwd" class="login_input" placeholder="교수용비밀번호"> 
+					${errMsg }
 					<input type="submit" value="로그인" class="login-btn" onsubmit="login()">
 				</form>
-
+				<div class="search-login">
+					<span class="login-search"><a href="searchid.jsp">학번/교번 찾기</a></span> 
+					
+				</div>
 			</div>
 			<!-- notice -->
 			<div class="notice">

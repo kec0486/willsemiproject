@@ -16,7 +16,11 @@
 		});
 
 		$('.ul-toggle').click(function() {
-			$('.ul-toggle-inner').show();
+			if($('.ul-toggle-inner').css("display") == "none"){
+			    $('.ul-toggle-inner').show();
+			} else {
+			    $('.ul-toggle-inner').hide();
+			}
 		});
 	});
 </script>
@@ -37,25 +41,21 @@
 					<ul>
 						<li class="ul-toggle">학생 정보 입력/조회
 							<ul class="ul-toggle-inner">
-								<li><a href="admin/studentinsert.jsp">학생정보등록</a></li>
-								<li><a href="admin/studentupdate.jsp">학생정보수정</a></li>
-								<li><a href="admin/studentlist.jsp">학생정보조회</a></li>
+								<li><a href="st_insert.jsp">학생정보등록</a></li>
+								<li><a href="controller?type=st_find">학생정보조회</a></li>
 							</ul>
 						</li>
 						<li class="ul-toggle">교수 정보 입력/조회
 							<ul class="ul-toggle-inner">
-								<li><a href="admin/professorinsert.jsp">교수정보등록</a></li>
-								<li><a href="admin/professorupdate.jsp">교수정보수정</a></li>
-								<li><a href="admin/professorlist.jsp">교수정보조회</a></li>
+								<li><a href="pro_insert.jsp">교수정보등록</a></li>
+								<li><a href="controller?type=pro_find">교수정보조회</a></li>
 							</ul>
 						</li>
 					</ul>
 					<h3>수강정보관리</h3>
 					<ul>
-						<li><a href="admin?subject=insert">수강과목입력</a></li>
-						<li><a href="admin?subject=update">수강과목수정</a></li>
-						<li><a href="admin?subject=delete">수강과목삭제</a></li>
-						<li><a href="admin?subject=select">수강과목조회</a></li>
+						<li><a href="sub_insert.jsp">수강과목등록</a></li>
+						<li><a href="controller?type=sub_find">수강과목조회</a></li>
 					</ul>
 					<h3>등록금정보관리</h3>
 					<ul>

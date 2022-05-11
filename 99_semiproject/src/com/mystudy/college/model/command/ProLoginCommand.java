@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mystudy.college.model.dao.AuthorityDAO;
 import com.mystudy.college.model.vo.ProfessorVO;
-import com.mystudy.college.model.vo.StudentVO;
 
 public class ProLoginCommand implements Command {
 
@@ -16,19 +15,23 @@ public class ProLoginCommand implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
+		System.out.println(id + ": "+ pwd);
 		
 		if(id.trim() == "" || pwd.trim() == "") {
 			return "index.jsp";
 		}
-		ProfessorVO vo = new ProfessorVO();
-		vo.setPro_id(Integer.parseInt(id));
-		vo.setPro_pwd(pwd);
 		
-		if(AuthorityDAO.prologin(vo) == null) {
+		ProfessorVO pvo = new ProfessorVO();
+		pvo.setPro_id(Integer.parseInt(id));
+		pvo.setPro_pwd(pwd);
+		
+		if(AuthorityDAO.prologin(pvo) == null) {
 			return "index.jsp";
 		}
-		ProfessorVO list = AuthorityDAO.prologin(vo);
+		
+		ProfessorVO list = AuthorityDAO.prologin(pvo);
 		request.setAttribute("list", list);
+		request.getSession().setAttribute("pvo", pvo);
 		return "main.jsp";	
 	}
 

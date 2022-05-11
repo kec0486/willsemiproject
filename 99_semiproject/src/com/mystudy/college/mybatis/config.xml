@@ -53,12 +53,21 @@
 	<mappers>
 		<mapper resource="com/mystudy/college/mybatis/Authoritymapper.xml" />
 		<mapper resource="com/mystudy/college/mybatis/Adminmapper.xml" />
+<<<<<<< HEAD
 		<mapper	resource="com/mystudy/college/mybatis/Noticeboardmapper.xml" />
 		<mapper	resource="com/mystudy/college/mybatis/Professormapper.xml" />
 		<mapper	resource="com/mystudy/college/mybatis/studentmapper.xml" />
 		<mapper	resource="com/mystudy/college/mybatis/Tuitionmapper.xml" />
 		<mapper	resource="com/mystudy/college/mybatis/Majormapper.xml" />
 	
+=======
+		<mapper
+			resource="com/mystudy/college/mybatis/Noticeboardmapper.xml" />
+		<mapper
+			resource="com/mystudy/college/mybatis/Professormapper.xml" />
+		<mapper
+			resource="com/mystudy/college/mybatis/studentmapper.xml" />
+>>>>>>> branch 'master' of https://github.com/kec0486/willsemiproject.git
 	</mappers>
 
 </configuration>

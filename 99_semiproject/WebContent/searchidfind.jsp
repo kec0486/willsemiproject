@@ -15,6 +15,7 @@
 	function idsearch() {
 		location.href = "controller?login=searchidfind";
 	}
+
 </script>
 </head>
 <body>
@@ -25,8 +26,8 @@
 		<form action="controller?login=searchidfind" method="post">
 			<input type="text" name="name" placeholder="성명" class="search_input"><br>
 			<input type="email" name="email" placeholder="등록된 이메일 주소" class="search_input"><br>		
-			<input type="submit" value="찾기" class ="search_btn" >
-			<input type="submit" value="돌아가기" onclick="back()" class ="search_btn" >
+			<input type="submit" value="학부생 찾기" class ="search_btn" >
+			<input type="button" value="돌아가기" onclick="back()" class ="search_btn" >
 		</form>
 	</div>
 

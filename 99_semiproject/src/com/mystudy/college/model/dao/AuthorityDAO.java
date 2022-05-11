@@ -35,6 +35,12 @@ public class AuthorityDAO {
 		ss.close();
 		return vo1;
 	}
+	public static StudentVO stsearchpwd(StudentVO vo) {
+		SqlSession ss = DBService.getFactory().openSession();
+		StudentVO vo1 = ss.selectOne("authority.stsearchpwd", vo);
+		ss.close();
+		return vo1;
+	}
 	public static ProfessorVO prosearchid(ProfessorVO vo) {
 		SqlSession ss = DBService.getFactory().openSession();
 		ProfessorVO vo1 = ss.selectOne("authority.prologin", vo);

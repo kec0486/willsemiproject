@@ -28,7 +28,7 @@ public class proRegiUpdateOkCommand implements Command {
 				int list = ProfessorDAO.proRegiUpdate(rvo);
 				System.out.println(list);
 				// 2. DB데이터 request scope 에 저장
-				request.setAttribute("list", list);
+				request.getSession().setAttribute("rvo", rvo);
 				
 				// 3. proLectureSelectList.jsp 페이지로 위임(전달) 처리
 				return "proRegUpdateOk.jsp";

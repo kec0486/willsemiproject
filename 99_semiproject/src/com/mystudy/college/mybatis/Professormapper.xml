@@ -41,7 +41,8 @@
 		S.SUB_DAY,
 		S.SUB_TIME,
 		S.SUB_CLASS
-		FROM SUBJECT S JOIN LECTURE L
+		FROM SUBJECT S JOIN
+		LECTURE L
 		ON S.SUB_CODE = L.SUB_CODE
 		WHERE L.PRO_ID = #{pro_id }
 	</select>
@@ -57,12 +58,31 @@
 		and re.sub_code = #{sub_code }
 	</select>
 
+	<select id="LecStuupdateList" parameterType="int"
+		resultType="com.mystudy.college.model.vo.StuRegiVO">
+		SELECT ST.*, RE.*
+		FROM STUDENT ST, REGISTRATION RE
+		where
+		ST.ST_ID = RE.ST_ID
+		and re.sub_code = #{sub_code }
+	</select>
+
+	<select id="LecStuOne" parameterType="HashMap" resultType="com.mystudy.college.model.vo.StuRegiVO" >
+		SELECT ST.*, RE.*
+		FROM STUDENT ST , REGISTRATION RE
+		WHERE ST.ST_ID = RE.ST_ID
+		AND ST.ST_ID = #{st_id }
+		AND RE.SUB_CODE = #{sub_code }
+	</select>
+	
+	
 	<!-- 학생 성적 입력 -->
 	<insert id="proRegiInsert"
 		parameterType="com.mystudy.college.model.vo.RegistrationVO">
-		INSERT INTO REGISTRATION(RE_TERM, RE_SCORE,
-		RE_GRADE,RE_SCORE,ST_ID)
-		VALUES (#{re_term }, #{re_score }, #{re_grade }, #{re_score }, #{st_id })
+		INSERT INTO REGISTRATION(RE_TERM, RE_SCORE, RE_GRADE,
+		SUB_CODE, ST_ID)
+		VALUES (#{re_term }, #{re_score }, #{re_grade },
+		#{sub_code }, #{st_id })
 	</insert>
 
 	<!-- 학생성적 수정 -->
@@ -71,7 +91,8 @@
 		UPDATE REGISTRATION
 		SET
 		RE_SCORE = #{re_score },
-		RE_GRADE = #{re_grade }
+		RE_GRADE =
+		#{re_grade }
 		WHERE ST_ID = #{st_id }
 		AND SUB_CODE = #{sub_code }
 
