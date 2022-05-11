@@ -1,3 +1,5 @@
+<%@page import="com.mystudy.college.model.vo.StudentVO"%>
+<%@page import="com.mystudy.college.model.dao.AuthorityDAO"%>
 <%@page import="com.mystudy.college.model.dao.NoticeboardDAO"%>
 <%@page import="com.mystudy.college.model.vo.NoticeboardVO"%>
 <%@page import="java.util.List"%>
@@ -31,9 +33,9 @@
 		//location.href = "noticeboard?type=noticeboardView&n_num=" + n_num;
 	}
 	
-	/* function loginCheck(){
-		var id = $('input[name=username]'); //아이디
-		var pwd = $('input[name=password]'); //비밀번호
+	function loginCheck(){
+		var id = $('input[name=id]'); //아이디
+		var pwd = $('input[name=pwd]'); //비밀번호
 		if(id.val() == ''){
 			alert('아이디를 입력해주세요');
 			id.focus();
@@ -45,17 +47,15 @@
 		}
 		return true;
 	}
-	function login() {
+	 /* function logincheck() {
 		$(function(){
-			
-			if($("#id").trim().val() == ''){
+			if($("#id").val() == ''){
 				alert("학번를 입력해주세요.");
 		        id.focus();
 		        return;
-			}
-			if($("#pwd").trim().val() == ''){
+			}else if($("#pwd").val() == ''){
 				alert("비밀번호를 입력해주세요.");
-		        id.focus();
+		        pwd.focus();
 		        return;
 			}
 		});	
@@ -69,15 +69,17 @@
 		<div class="content_wrap">
 			<!-- login -->
 			<div class="login">
-				<form action="controller?login=student" method="post">
+				<form action="controller?login=student" method="post" onsubmit="return loginCheck()">
 					<!-- controller?type=login -->
 					<h2 class="login-title">학생로그인</h2>
-					<input type="text" name="id" class="login_input" placeholder="헉번">
-					<input type="password" name="pwd" class="login_input" placeholder="비밀번호"> 
-					<input type="submit" value="로그인" class="login-btn" onsubmit="login()">
+					<input type="text" name="id" id="id" class="login_input" placeholder="헉번">
+					<input type="password" name="pwd" id="pwd" class="login_input" placeholder="비밀번호">
+					${errMsg }
+					<input type="submit" value="로그인" class="login-btn">
 				</form>
 				<div class="search-login">
-					<span class="login-search"><a href="searchid.jsp">학번/교번 찾기</a></span> 
+					<span class="login-search"><a href="searchid.jsp">학번/교번 찾기</a></span>
+					<span class="login-search"><a href="searchpwd.jsp">비밀번호 찾기</a></span>  
 					<!-- <span class="login-reset"><a href="#">비밀번호초기화</a></span> -->
 				</div>
 			</div>

@@ -93,11 +93,10 @@ body {
 					</ul>
 					<h3>수강정보</h3>
 					<ul>
-						<li><a href="admin?tuition=insert">시간표 조회</a></li>
 						<li class="ul-toggle">수강신청
 							<ul class="ul-toggle-inner">
-								<li><a href="admin?tuition=insert">수강신청내역</a></li>
-								<li><a href="admin?tuition=insert">교과목 조회</a></li>
+								<li><a href="student?type=reg_find&id=${list.st_id }">수강신청내역</a></li>
+								<li><a href="student?type=sub_select&id=${list.st_id }">교과목 조회</a></li>
 							</ul>
 						</li>
 					</ul>

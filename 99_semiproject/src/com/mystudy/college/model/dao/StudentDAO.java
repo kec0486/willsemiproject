@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mystudy.college.model.vo.ProfessorVO;
 import com.mystudy.college.model.vo.RegiSubVO;
+import com.mystudy.college.model.vo.RegistrationVO;
 import com.mystudy.college.model.vo.StudentVO;
+import com.mystudy.college.model.vo.SubjectVO;
 import com.mystudy.college.mybatis.DBService;
 
 public class StudentDAO {
@@ -73,5 +75,31 @@ public class StudentDAO {
 		ss.close();
 		return vo;
 	}
-
+	public static List<SubjectVO> subselect() {
+		SqlSession ss = DBService.getFactory().openSession();
+		List<SubjectVO> list = ss.selectList("admin.sub_selectAll");
+		ss.close();
+		return list;
+	}
+	//수강신청
+	public static int reg_insert(RegistrationVO vo) {
+		SqlSession ss = DBService.getFactory().openSession();
+		int n = ss.insert("student.reg_insert",vo);
+		ss.commit();
+		ss.close();
+		return n;
+	}
+	//수강과목조회
+	public static RegistrationVO reg_select(RegistrationVO vo) {
+		SqlSession ss = DBService.getFactory().openSession();
+		RegistrationVO vo1 = ss.selectOne("student.reg_select",vo);
+		ss.close();
+		return vo1;
+	}
+	public static List<SubjectVO> sub_select(SubjectVO vo) {
+		SqlSession ss = DBService.getFactory().openSession();
+		List<SubjectVO> vo1 = ss.selectList("student.sub_select",vo);
+		ss.close();
+		return vo1;
+	}
 }

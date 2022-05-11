@@ -12,6 +12,7 @@ import com.mystudy.college.model.command.AdminLoginCommand;
 import com.mystudy.college.model.command.Command;
 import com.mystudy.college.model.command.StLoginCommand;
 import com.mystudy.college.model.command.StSearchCommand;
+import com.mystudy.college.model.command.StSearchpwdCommand;
 import com.mystudy.college.model.command.StudentInsertCommand;
 
 
@@ -28,6 +29,8 @@ public class LoginControllerCommand extends HttpServlet{
 			command = new StLoginCommand();
 		}else if ("searchidfind".equals(login)) { //서브페이지 이동 
 			command = new StSearchCommand();
+		}else if ("searchpwdfind".equals(login)) { //서브페이지 이동 
+			command = new StSearchpwdCommand();
 		}
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);

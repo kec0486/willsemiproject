@@ -288,12 +288,12 @@ h2{
     font-size : 30px;
  	font-family: 'East Sea Dokdo', cursive;	
 }
-.search_id {
+.search_id, .search_pwd {
 	padding: 300px 200px;
 	text-align: center;
 	height: 150px;
 }
-.searchid_select {
+.searchid_select,.searchpwd_select {
 	text-align: center;
 }
 .search_input {
@@ -306,7 +306,6 @@ h2{
 	left: auto;
     width: 100%;
     right: auto;
-    padding: 10px 300px;
 }
 /* footer css */
 .footer  {
@@ -324,7 +323,6 @@ h2{
  	background-color: white;
  	text-align : center;
 }
-<<<<<<< HEAD
 
 .styled-table {
 	border-collapse: collapse;
@@ -361,4 +359,9 @@ h2{
 }
 .st_find {
 	border-collapse: collapse;
+}
+.search_id, .search_pwd {
+	border: 2px solid #8080803b;
+    width: 450px;
+    margin-left: 350px;
 }

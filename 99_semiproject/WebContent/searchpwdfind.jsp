@@ -13,17 +13,18 @@
 		location.href = "index.jsp";
 	}
 	function idsearch() {
-		location.href = "controller?login=searchidfind";
+		location.href = "controller?login=searchpwdfind";
 	}
 
 </script>
 </head>
 <body>
 	<!-- content -->
-	<div class="search_id">
-		<h2 class="searchid_select">학부생 학번 조회</h2>
+	<div class="search_pwd">
+		<h2 class="searchpwd_select">학부생 학번 조회</h2>
 		<h3>이메일 인증</h3><br>
-		<form action="controller?login=searchidfind" method="post">
+		<form action="controller?login=searchpwdfind" method="post">
+			<input type="text" name="id" placeholder="학번(id)" class="search_input"><br>
 			<input type="text" name="name" placeholder="성명" class="search_input"><br>
 			<input type="email" name="email" placeholder="등록된 이메일 주소" class="search_input"><br>		
 			<input type="submit" value="학부생 찾기" class ="search_btn" >

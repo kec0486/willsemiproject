@@ -24,6 +24,10 @@ public class RegistrationVO {
 		this.st_id = st_id;
 	}
 
+	public RegistrationVO() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getRe_term() {
 		return re_term;
 	}
