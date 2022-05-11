@@ -28,6 +28,10 @@ public class RegistrationVO {
 		// TODO Auto-generated constructor stub
 	}
 
+	public RegistrationVO(int stuId, int subCode) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getRe_term() {
 		return re_term;
 	}

@@ -17,7 +17,6 @@ public class professorSelectListCommand implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("> professorSelectListCommand 실행");
-		HttpSession session = request.getSession();
 		// 교수 개인정보조회
 		// 파라미터 받은 것 가져오기
 		String pro_id = request.getParameter("pro_id");
@@ -30,7 +29,7 @@ public class professorSelectListCommand implements Command {
 		
 		
 		// 2. DB데이터 request scope 에 저장
-		request.getSession().setAttribute("pvo", pvo);
+		request.setAttribute("pvo", pvo);
 		
 		return "professorSelectList.jsp";
 	}

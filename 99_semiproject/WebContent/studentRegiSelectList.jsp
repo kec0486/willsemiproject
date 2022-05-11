@@ -47,7 +47,7 @@
 			<div class="aside">
 				
 				<div class="aside-menu">
-					<h3>개인정보</h3>
+						<h3>개인정보</h3>
 					<ul>
 						<li><a
 							href="student?type=studentSelectList&st_id=${list.st_id }">학생

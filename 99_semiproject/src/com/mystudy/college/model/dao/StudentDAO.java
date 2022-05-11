@@ -13,9 +13,9 @@ import com.mystudy.college.mybatis.DBService;
 
 public class StudentDAO {
 	// 학생 아이디로 받아서 개인정보 조회
-	public static List<StudentVO> selectId(int selectId) {
+	public static StudentVO selectId(int selectId) {
 		SqlSession ss = DBService.getFactory().openSession();
-		List<StudentVO> list = ss.selectList("student.studentSelect", selectId);
+		StudentVO list = ss.selectOne("student.studentSelect", selectId);
 		System.out.println(list);
 		ss.close();
 		return list;

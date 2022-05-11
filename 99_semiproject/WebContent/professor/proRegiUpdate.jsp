@@ -26,18 +26,18 @@
 	   }
 	   
 	   function update_go(pro_id) {
-	      alert("update_go(st_id) 정상작동");
+	      //alert("update_go(st_id) 정상작동");
 	      location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
 	      
 	   }
 	   
 	   function check_prolec(pro_id){
-	      alert("update_go(st_id) 정상작동");
+	      //alert("update_go(st_id) 정상작동");
 	      location.href = "controller?type=prolectureSelectList&pro_id=" + pro_id;
 	      
 	   }
 	   function check_proup(pro_id){
-	      alert("check_proup(pro_id) 정상작동");
+	      //alert("check_proup(pro_id) 정상작동");
 	      location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
 	      
 	   }

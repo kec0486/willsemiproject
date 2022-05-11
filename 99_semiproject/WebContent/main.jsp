@@ -60,11 +60,15 @@
 				<div class="aside-menu">
 					<h3>개인정보</h3>
 					<ul>
-						<li><a href="student?type=studentSelectList&st_id=${list.st_id }">학생 정보 조회 / 수정</a></li>
+						<li><a
+							href="student?type=studentSelectList&st_id=${list.st_id }">학생
+								정보 조회 / 수정</a></li>
 					</ul>
 					<h3>성적정보</h3>
 					<ul>
-						<li><a href="student?type=stuSubjectList&st_id=${list.st_id }">학년별 성적 확인 / 전체 성적확인</a></li>
+						<li><a
+							href="student?type=stuSubjectList&st_id=${list.st_id }">학년별
+								성적 확인 / 전체 성적확인</a></li>
 					</ul>
 					<h3>수강정보</h3>
 					<ul>

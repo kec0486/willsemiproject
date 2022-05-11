@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mystudy.college.model.dao.ProfessorDAO;
 import com.mystudy.college.model.vo.LecSubjectVO;
@@ -17,7 +18,7 @@ public class prolectureSelectListCommand implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 교수 아이디로 교수 강의 목록 리스트 가져오기
 		System.out.println("> prolectureSelectListCommand 실행");
-		
+
 		// 교수 개인정보조회
 		// 파라미터 받은 것 가져오기
 		String pro_id = request.getParameter("pro_id");

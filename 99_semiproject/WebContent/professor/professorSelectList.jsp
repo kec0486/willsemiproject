@@ -28,18 +28,18 @@
 	}
 
 	function update_go(pro_id) {
-		alert("update_go(st_id) 정상작동");
+		//alert("update_go(st_id) 정상작동");
 		location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
 
 	}
 
 	function check_prolec(pro_id) {
-		alert("update_go(st_id) 정상작동");
+		//alert("update_go(st_id) 정상작동");
 		location.href = "controller?type=prolectureSelectList&pro_id=" + pro_id;
 
 	}
 	function check_proup(pro_id) {
-		alert("check_proup(pro_id) 정상작동");
+		//alert("check_proup(pro_id) 정상작동");
 		location.href = "controller?type=professorUpdate&pro_id=" + pro_id;
 
 	}
@@ -47,9 +47,9 @@
 </script>
 </head>
 <body>
-
+${list}
 	<!-- header -->
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include> 
 
 	<!-- content -->
 	<div class="container study-manage">
@@ -57,6 +57,7 @@
 		<aside>
 			<div class="aside">
 				<h2>교수</h2>
+				${list }
 				<div class="aside-menu">
 					<h3>개인정보관리</h3>
 					<ul>
