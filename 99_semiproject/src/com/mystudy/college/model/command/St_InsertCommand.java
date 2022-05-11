@@ -23,10 +23,11 @@ public class St_InsertCommand implements Command {
 		String addr = request.getParameter("addr");
 		int code = Integer.parseInt(request.getParameter("code"));
 		StudentVO vo = new StudentVO(0, pwd, name, ssn, level, mobile, phone, email, addr, code);
+		System.out.println(vo);
 		System.out.println(StudentDAO.insert(vo));
 		int n = StudentDAO.insert(vo);
 		if(n == 1) {
-			return "success.jsp";			
+			return "st_insert.jsp";			
 		}else {
 			return "fail.jsp";	
 		}

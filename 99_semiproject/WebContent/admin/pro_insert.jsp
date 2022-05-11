@@ -78,17 +78,17 @@
 				<div class="container">
 					<h1>교수정보신규등록</h1>
 				<hr>
-				<form action="/admin/controller?type=pro_insert" method="post">
-					비밀번호 <input type="text" name="pwd"><br>
-					교수이름 <input type="text" name="name"><br>
-					주민등록번호 <input type="text" name="ssn"><br>
-					직위 <input type="text" name="position"><br>
-					연구실위치 <input type="text" name="office"><br>
-					휴대폰번호 <input type="text" name="mobile"><br>
-					집전화번호 <input type="text" name="phone"><br>
-					이메일주소 <input type="email" name="email"><br>
-					집주소 <input type="text" name="addr"><br>
-					학과코드 <input type="text" name="code"><br>
+				<form action="controller?type=pro_insert" method="post">
+					비밀번호 <input type="text" name="pwd" placeholder="비밀번호"><br>
+					교수이름 <input type="text" name="name" placeholder="홍길동"><br>
+					주민등록번호 <input type="text" name="ssn" placeholder="000000-0000000"><br>
+					직위 <input type="text" name="position" placeholder="직원"><br>
+					연구실위치 <input type="text" name="office" placeholder="1연구실"><br>
+					휴대폰번호 <input type="text" name="mobile" placeholder="000-0000-0000"><br>
+					집전화번호 <input type="text" name="phone" placeholder="00-0000-0000"><br>
+					이메일주소 <input type="email" name="email" placeholder="hong@gmail.com"><br>
+					집주소 <input type="text" name="addr" placeholder="서울특별시 강남구 테헤란로 124"><br>
+					학과코드 <input type="text" name="code" placeholder="1~5 사과대 6~10 인문대 ..."><br>
 					<input type="submit" value="등록"	><input type="reset" value="리셋"	>
 				</form>
 				</div>

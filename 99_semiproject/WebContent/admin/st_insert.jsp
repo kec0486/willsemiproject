@@ -78,19 +78,19 @@
 				<div class="container">
 				<h1>학생정보신규등록</h1>
 				<hr>
-				<form action="/admin/controller?type=st_insert" method="post">
-					비밀번호 <input type="text" name="pwd"><br>
-					학생이름 <input type="text" name="name"><br>
-					주민등록번호 <input type="text" name="ssn"><br>
+				<form action="controller?type=st_insert" method="post">
+					비밀번호 <input type="text" name="pwd" placeholder="비밀번호"><br>
+					학생이름 <input type="text" name="name" placeholder="홍길동"><br>
+					주민등록번호 <input type="text" name="ssn" placeholder="000000-0000000"><br>
 					학년 
 						1<input type="radio" name="level" value="1">
 						2<input type="radio" name="level" value="2">
 						3<input type="radio" name="level" value="3"><br>
-					휴대폰번호 <input type="text" name="mobile"><br>
-					집전화번호 <input type="text" name="phone"><br>
-					이메일주소 <input type="email" name="email"><br>
-					집주소 <input type="text" name="addr"><br>
-					학과코드 <input type="text" name="code"><br>
+					휴대폰번호 <input type="text" name="mobile" placeholder="000-0000-0000"><br>
+					집전화번호 <input type="text" name="phone" placeholder="00-0000-0000"><br>
+					이메일주소 <input type="email" name="email" placeholder="hong@gmail.com"><br>
+					집주소 <input type="text" name="addr" placeholder="서울특별시 강남구 테헤란로 124"><br>
+					학과코드 <input type="text" name="code" placeholder="1~5 사과대 6~10 인문대 ..."><br>
 					<input type="submit" value="등록"	><input type="reset" value="리셋"	>
 				</form>
 				</div>
